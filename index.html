@@ -9,13 +9,13 @@
   <body>
     <header>
       <h1>XBJ Cocktail Generator</h1>
-    </header>
       <nav>
         <ul id="navList">
           <li><a href="#">Home Page</a></li>
           <li><a href="#">About Us</a></li>
         </ul>
       </nav>
+    </header>
     <main>
       <section class="instructions">
         <h2>Instructions</h2>
@@ -23,11 +23,43 @@
       </section>
 
       <section id="dropDowns">
-        <div>Drop Down 1</div>
-        <div>Drop Down 2</div>
-        <div>Drop Down 3</div>
-        <div>Drop Down 4</div>
+        <form>
+          <label for ='dropdown'>Base</label>
+          <select id="dropDown-1" name="dropdown-1">
+            <option value="base-1">Base 1</option>
+            <option value="base-2">Base 2</option>
+            <option value="base-3">Base 3</option>
+            <option value="base-4">Base 4</option>
+          </select>
+          <label for ='dropdown'>Citrus</label>
+          <select id="dropDown-2" name="dropdown-2">
+            <option value="citrus-1">Citrus 1</option>
+            <option value="citrus-2">Citrus 2</option>
+            <option value="citrus-3">Citrus 3</option>
+            <option value="citrus-4">Citrus 4</option>
+          </select>
+          <label for ='dropdown'>Bitter</label>
+          <select id="dropDown-3" name="dropdown-3">
+            <option value="bitter-1">Bitter 1</option>
+            <option value="bitter-2">Bitter 2</option>
+            <option value="bitter-3">Bitter 3</option>
+            <option value="bitter-4">Bitter 4</option>
+          </select>
+          <label for ='dropdown'>Sweet</label>
+          <select id="dropDown-4" name="dropdown-4">
+            <option value="sweet-1">Sweet 1</option>
+            <option value="sweet-2">Sweet 2</option>
+            <option value="sweet-3">Sweet 3</option>
+            <option value="sweet-4">Sweet 4</option>
+          </select>
+        </form>
       </section>
+
+      <section id="recipe">
+        <img />
+        <p></p>
+      </section>
+      <button>Submit!</button>
     </main>
 
     <footer>
