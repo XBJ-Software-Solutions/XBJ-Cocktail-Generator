@@ -3,7 +3,7 @@ citrusIngredients = [];
 bitterIngredients = [];
 sweetIngredients = [];
 
-function Ingredients(type, name, sourLevel, bitterLevel, sweetLevel, unitOfMeasure, volume) {
+function Ingredient(type, name, sourLevel, bitterLevel, sweetLevel, unitOfMeasure, volume) {
     this.type = type;
     this.name = name;
     this.sourLevel = sourLevel;
@@ -25,5 +25,20 @@ function Ingredients(type, name, sourLevel, bitterLevel, sweetLevel, unitOfMeasu
     }
 }
 
+const whiskey = new Ingredient ('base', 'whiskey', 0, 0, 0, 'ounces', 2.0);
+const gin = new Ingredient ('base', 'gin', 0, 0, 0, 'ounces', 2.0);
+const tequila = new Ingredient ('base', 'tequila', 0, 0, 0, 'ounces', 2.0);
+const mezcal = new Ingredient ('base', 'mezcal', 0, 0, 0, 'ounces', 2.0);
+const lemon = new Ingredient ('citrus', 'lemon', 0, 0, 0, 'ounces', 1.0);
+const lime = new Ingredient ('citrus', 'lime', 0, 0, 0, 'ounces', 1.0);
+const orange = new Ingredient ('citrus', 'orange', 0, 0, 0, 'ounces', 1.0);
+const agnostura = new Ingredient ('bitter', 'agnostura bitters', 0, 0, 0, 'dashes', 1.0);
+const campari = new Ingredient ('bitter', 'campari', 0, 0, 0, 'ounces', 1.0);
+const aperol = new Ingredient ('bitter', 'aperol', 0, 0, 0, 'ounces', 1.0);
+const cynar = new Ingredient ('bitter', 'cynar', 0, 0, 0, 'ounces', 1.0);
+const simple = new Ingredient ('sweet', 'simple syrup', 0, 0, 0, 'ounces', 1.0);
+const sweetVermouth = new Ingredient ('sweet', 'sweet vermouth', 0, 0, 0, 'ounces', 1.0);
+const dryVermouth = new Ingredient ('sweet', 'dry vermouth', 0, 0, 0, 'ounces', 1.25);
+const honey = new Ingredient ('sweet', 'honey syrup', 0, 0, 0, 'ounces', 0.75);
 
-Rum
+console.log (baseSpirits);
