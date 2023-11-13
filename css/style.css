@@ -1,2 +1,13 @@
 /* *  border: 1px solid black;
 } { */
+
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  #navList {
+    display: flex;
+    justify-content: space-around;
+  }
