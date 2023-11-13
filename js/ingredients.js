@@ -11,18 +11,18 @@ function Ingredient(type, name, sourLevel, bitterLevel, sweetLevel, unitOfMeasur
     this.sweetLevel = sweetLevel;
     this.unitOfMeasure = unitOfMeasure;
     this.volume = volume;
-    if (type = 'base') {
+    if (type === 'base') {
         baseSpirits.push(this); 
     };
-    if (type = 'citrus') {
+    if (type === 'citrus') {
         citrusIngredients.push(this);
     };
-    if (type = 'bitter') {
+    if (type === 'bitter') {
         bitterIngredients.push(this);
     };
-    if (type = 'sweet') {
+    if (type === 'sweet') {
         sweetIngredients.push(this);
-    }
+    };
 }
 
 const whiskey = new Ingredient ('base', 'whiskey', 0, 0, 0, 'ounces', 2.0);
@@ -42,3 +42,6 @@ const dryVermouth = new Ingredient ('sweet', 'dry vermouth', 0, 0, 0, 'ounces', 
 const honey = new Ingredient ('sweet', 'honey syrup', 0, 0, 0, 'ounces', 0.75);
 
 console.log (baseSpirits);
+console.log (citrusIngredients);
+console.log (bitterIngredients);
+console.log (sweetIngredients);
