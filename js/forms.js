@@ -1,12 +1,14 @@
 let ingredientsForm = document.getElementById('ingredientsForm');
-let inputs = document.querySelectorAll('input');
-let selectedIngredients = {};
+let inputs = document.querySelectorAll('option');
+let selectedIngredients = [];
 
 
 for(let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('change', function(event) {
       console.log(event.target.name, event.target.value);
-      selectedIngredients[event.target.name] = event.target.value;
+      if (event.target.value === allIngredients[].name) { 
+        selectedIngredients.push(this);
+      };
     });
   };
 
@@ -25,5 +27,6 @@ for(let i = 0; i < inputs.length; i++) {
     ingredientsForm.reset();
     // base.focus();
     renderRecipe();
+    // renderImage(); this function hasn't been made yet
     }
   );
