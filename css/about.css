@@ -1,0 +1,160 @@
+/* *  border: 1px solid black;
+} { */
+
+body {
+  font-family: sans-serif;
+  background: beige;
+  width: 100vw;
+}
+
+/* --------------------------------- Header Styles---------------------------------*/
+
+header {
+  margin-bottom: 32px;
+  background: rgb(241, 145, 89);
+}
+
+h1 {
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+  /* background-image: url("https://c.pxhere.com/photos/e6/81/ducks_figures_group_cute_sweet_many-1411876.jpg!d"); */
+  /* background-size: cover;
+  background-position: center; */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  outline: 10px ridge rgb(0, 0, 0);
+  width: 100vw;
+  vertical-align: middle;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+
+div img {
+  width: 12vw;
+  margin: 10px;
+  border: 3px solid #111;
+}
+
+/* --------------------------------- Nav Bar Styles---------------------------------*/
+
+nav {
+  padding: 20px;
+  background: rgb(79, 84, 84);
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 90px;
+}
+
+li > a {
+  color: rgb(211, 207, 207);
+  font-size: 1.5vw;
+}
+
+/* --------------------------------- Main Styles---------------------------------*/
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 1em auto;
+  align-items: center;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 2vw;
+  font-weight: bold;
+  color: black;
+  border: 2px solid #111;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 40px 10px 40px;
+  background: #80b584;
+}
+
+/* --------------------------------- Member Details Styles---------------------------------*/
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+}
+
+main div {
+  display: flex;
+}
+
+main img {
+  height: 45vh;
+  width: 22vw;
+  flex: none;
+  border: 5px solid #111;
+  border-radius: 20px;
+}
+
+div p {
+  border: 5px solid #111;
+  text-align: start;
+  border-radius: 20px;
+  line-height: 1.5vw;
+  padding: 10px;
+  height: 40vh;
+  width: 20vw;
+  font-size: 1.1vw;
+  align-self: center;
+  color: rgb(243, 246, 248);
+}
+
+.members div:nth-child(1) p {
+  background: #3c71a5;
+}
+
+.members div:nth-child(2) p {
+  background: #de3c27;
+}
+.members div:nth-child(3) p {
+  background: #ce8c2b;
+}
+.members div:nth-child(4) p {
+  background: #74a041;
+}
+
+/* --------------------------------- Article Styles---------------------------------*/
+
+article {
+  border: 5px solid #111;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #07444a;
+}
+
+article section p {
+  margin-bottom: 10px;
+  font-size: 1.1vw;
+  line-height: 1.5vw;
+  padding: 5px;
+  text-align: center;
+  color: aliceblue;
+}
+
+footer {
+  font-size: 1.5vw;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  background: rgb(241, 145, 89);
+}
