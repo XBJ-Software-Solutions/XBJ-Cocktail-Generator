@@ -1,4 +1,5 @@
 let ingredientsForm = document.getElementById('ingredientsForm');
+let drinkImage = document.getElementById('recipeImage');
 let options = document.querySelectorAll('option');
 let selectedIngredients = [];
 
@@ -75,6 +76,27 @@ for(let i = 0; i < options.length; i++) {s
     recipeDisplay.appendChild(recipeElement);
   }
 
+  // Render Image function 
+  function renderImage () {
+    let imageArray = [];
+    let ImageMap = function(src, alt){
+      this.src = src;
+      this.alt = alt;
+
+      imageArray.push(this.src);
+    }
+
+
+      let tequilaImage = new ImageMap ('img/tequila.jpg', 'tequila');
+      let rumImage = new ImageMap ('img/rum.jpg', 'rum');
+      let whiskeyImage = new ImageMap ('img/whiskey.jpg', 'whiskey');
+      let ginImage = new ImageMap ('img/gin.jpg', 'gin');
+    console.log(imageArray);
+
+  }
+
+  // renderImage();
+  
 
   ingredientsForm.addEventListener("submit", function(event) {
     event.preventDefault();
