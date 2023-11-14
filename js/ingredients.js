@@ -2,6 +2,7 @@ baseSpirits = [];
 citrusIngredients = [];
 bitterIngredients = [];
 sweetIngredients = [];
+allIngredients = [];
 
 function Ingredient(type, name, sourLevel, bitterLevel, sweetLevel, unitOfMeasure, volume) {
     this.type = type;
@@ -23,12 +24,13 @@ function Ingredient(type, name, sourLevel, bitterLevel, sweetLevel, unitOfMeasur
     if (type === 'sweet') {
         sweetIngredients.push(this);
     };
+    allIngredients.push(this);
 }
 
 const whiskey = new Ingredient ('base', 'whiskey', 0, 0, 0, 'ounces', 2.0);
 const gin = new Ingredient ('base', 'gin', 0, 0, 0, 'ounces', 2.0);
 const tequila = new Ingredient ('base', 'tequila', 0, 0, 0, 'ounces', 2.0);
-const mezcal = new Ingredient ('base', 'mezcal', 0, 0, 0, 'ounces', 2.0);
+const rum = new Ingredient ('base', 'rum', 0, 0, 0, 'ounces', 2.0);
 const lemon = new Ingredient ('citrus', 'lemon', 0, 0, 0, 'ounces', 1.0);
 const lime = new Ingredient ('citrus', 'lime', 0, 0, 0, 'ounces', 1.0);
 const orange = new Ingredient ('citrus', 'orange', 0, 0, 0, 'ounces', 1.0);
@@ -45,3 +47,4 @@ console.log (baseSpirits);
 console.log (citrusIngredients);
 console.log (bitterIngredients);
 console.log (sweetIngredients);
+console.log (allIngredients);
