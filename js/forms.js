@@ -83,9 +83,17 @@ for(let i = 0; i < options.length; i++) {s
       this.src = src;
       this.alt = alt;
 
-      imageArray.push(this.src);
+      imageArray.push(this);
     }
 
+    for(let i = 0; i < imageArray.length; i++) {
+      if(selectedIngredients[0].name === imageArray[i].alt) {
+        drinkImage.src = imageArray[i].src;
+        drinkImage.alt = imageArray[i].alt;
+      } 
+    }
+
+    
 
       let tequilaImage = new ImageMap ('img/tequila.jpg', 'tequila');
       let rumImage = new ImageMap ('img/rum.jpg', 'rum');
@@ -104,7 +112,7 @@ for(let i = 0; i < options.length; i++) {s
     // base.focus();
     renderRecipe();
 
-    // renderImage(); this function hasn't been made yet
+    renderImage();
     }
   );
 
