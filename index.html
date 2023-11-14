@@ -4,7 +4,6 @@
     <title></title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/app.js"></script>
   </head>
   <body>
     <header>
@@ -49,37 +48,39 @@
             Hit Submit!
           </li>
         </ol>
-      <!-- <  <p>To craft your perfect concoction, follow these simple steps: Begin by navigating to the "Base" dropdown menu and select your preferred base ingredient. Move on to the "Citrus" dropdown, where you can choose a citrusy component to complement your drink. Head to the "Bitter" dropdown and pick a bitter element that suits your taste. Lastly, explore the "Sweet" dropdown and select the perfect sweet ingredient to balance the flavors. Once you've made your selections for each category, review your choices, and when satisfied, press the "Submit" button below the dropdown menus to submit your custom blend. Cheers to your unique creation!</p>> -->
+        <!-- <  <p>To craft your perfect concoction, follow these simple steps: Begin by navigating to the "Base" dropdown menu and select your preferred base ingredient. Move on to the "Citrus" dropdown, where you can choose a citrusy component to complement your drink. Head to the "Bitter" dropdown and pick a bitter element that suits your taste. Lastly, explore the "Sweet" dropdown and select the perfect sweet ingredient to balance the flavors. Once you've made your selections for each category, review your choices, and when satisfied, press the "Submit" button below the dropdown menus to submit your custom blend. Cheers to your unique creation!</p>> -->
       </section>
-
+      
       <section id="dropDowns">
         <form id="ingredientsForm">
-          <label for ='dropdown'>Base</label>
+          <label for ="dropDownBase">Base</label>
           <select id="dropDownBase" name="dropdown-1">
           </select>
-          <label for ='dropdown'>Citrus</label>
+          <label for ="dropDownCitrus">Citrus</label>
           <select id="dropDownCitrus" name="dropdown-2">
           </select>
-          <label for ='dropdown'>Bitter</label>
+          <label for ="dropDownBitter">Bitter</label>
           <select id="dropDownBitter" name="dropdown-3">
           </select>
-          <label for ='dropdown'>Sweet</label>
+          <label for ="dropDownSweet">Sweet</label>
           <select id="dropDownSweet" name="dropdown-4">
           </select>
+          <input type="submit" value ="Submit">
         </form>
       </section>
-
-      <section id="recipe">
+      
+      <section>
         <img />
-        <p></p>
+        <p id="recipe"></p>
       </section>
-      <button>Submit!</button>
+      <!-- <button>Submit!</button> -->
     </main>
-
+    
     <footer>
 &copy; XBJ Software Solutions 
     </footer>
+    <script src="js/app.js"></script>
     <script src="js/ingredients.js"></script>
     <script src="js/forms.js"></script>
   </body>
-</html>
+  </html>
