@@ -126,6 +126,13 @@ function removeRecipe() {
   if (recipeDisplay.textContent.trim() !== '') {
     recipeDisplay.textContent = '';
   };
+  if (drinkImage.src.trim() !== '') {
+    drinkImage.src = '';
+    drinkImage.alt = '';
+  };
+  if (recipeHeading.textContent.trim() !== '') {
+    recipeHeading.textContent = '';
+}
 }
 
 ingredientsForm.addEventListener("submit", function(event) {
