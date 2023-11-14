@@ -1,3 +1,9 @@
+
+let ingredientsForm = document.getElementById('ingredientsForm');
+let drinkImage = document.getElementById('recipeImage');
+
+let selectedIngredients = [];
+
 let base = document.getElementById('dropDownBase');
 let citrus = document.getElementById('dropDownCitrus');
 let bitter = document.getElementById('dropDownBitter');
@@ -74,13 +80,45 @@ function handleSelection (event) {
   };
   console.log (selectedIngredients);
   removeRecipe();
-};
 
+  // Render Image function 
+  function renderImage () {
+    let imageArray = [];
+    let ImageMap = function(src, alt){
+      this.src = src;
+      this.alt = alt;
+
+      imageArray.push(this);
+    }
+
+    for(let i = 0; i < imageArray.length; i++) {
+      if(selectedIngredients[0].name === imageArray[i].alt) {
+        drinkImage.src = imageArray[i].src;
+        drinkImage.alt = imageArray[i].alt;
+      } 
+    }
+
+    
+
+      let tequilaImage = new ImageMap ('img/tequila.jpg', 'tequila');
+      let rumImage = new ImageMap ('img/rum.jpg', 'rum');
+      let whiskeyImage = new ImageMap ('img/whiskey.jpg', 'whiskey');
+      let ginImage = new ImageMap ('img/gin.jpg', 'gin');
+    console.log(imageArray);
+
+  }
+
+  // renderImage();
+  
 baseSelector.addEventListener('change', handleSelection);
 citrusSelector.addEventListener('change', handleSelection);
 bitterSelector.addEventListener('change', handleSelection);
 sweetSelector.addEventListener('change', handleSelection);
 
+
+    renderImage();
+    }
+  );
 
 function renderRecipe () {
   let recipeDisplay = document.getElementById('recipe');
