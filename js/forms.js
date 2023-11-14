@@ -1,14 +1,14 @@
 let ingredientsForm = document.getElementById('ingredientsForm');
-let inputs = document.querySelectorAll('option');
+let options = document.querySelectorAll('option');
 let selectedIngredients = [];
 
+console.log(options);
 
-let selectedIngredients = {};
 let base = document.getElementById('dropDownBase');
 let citrus = document.getElementById('dropDownCitrus');
 let bitter = document.getElementById('dropDownBitter');
 let sweet = document.getElementById('dropDownSweet');
-console.log(inputs);
+console.log(options);
 
 let baseFunction = function(){
   for(let i = 0;i < baseSpirits.length; i++){
@@ -46,17 +46,25 @@ let sweetFunction = function(){
   }
 }
 
-for(let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('change', function(event) {
-      console.log(event.target.name, event.target.value);
-
-      if (event.target.value === allIngredients[].name) { 
-        selectedIngredients.push(this);
-      };
-      selectedIngredients[event.target.name] = event.target.value;
-
-    });
+function handleSelectionBase (event) {
+  let userBase = event.target.name
+  console.log (userBase);
+  if (event.target.value === baseSpirits[0].name) { 
+    selectedIngredients.push(this);
   };
+};
+console.log (selectedIngredients);
+
+for(let i = 0; i < options.length; i++) {s
+    options[i].addEventListener('changes', handleSelectionBase)
+      // console.log(event.target.name, event.target.value);
+
+      // if (event.target.value === allIngredients[0].name) { 
+        // selectedIngredients.push(this);
+        console.log (selectedIngredients);
+        console.log (allIngredients[0].name);
+      };
+      // selectedIngredients[event.target.name] = event.target.value;
 
 
   function renderRecipe () {
@@ -78,8 +86,6 @@ for(let i = 0; i < inputs.length; i++) {
     }
   );
 
-    }
-  );
 
   baseFunction();
   citrusFunction();
