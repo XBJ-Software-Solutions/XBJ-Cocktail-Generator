@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>About XBJ</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>XBJ Cocktail Generator</h1>
+      <div>
+         <img src="img/logo.png" alt="logo" />
+              <h1>XBJ Cocktail Generator</h1>
+      </div>
+   
       <nav>
-        <img src="img/logo.jpeg" alt="logo" />
-        <ul id="navList">
-           <li><a href="index.html">Home Page</a></li>
+
+        <ul>
+          <li><a href="index.html">Home Page</a></li>
           <li><a href="aboutus.html">About Us</a></li>
         </ul>
       </nav>
+  
+
     </header>
     <main>
       <section class="instructions">
@@ -53,6 +59,7 @@
       
       <section id="dropDowns">
         <form id="ingredientsForm">
+
           <div class="dropDownSelector">
             <label for ="dropDownBase">Base</label>
             <select id="dropDownBase" name="dropdown-1">
@@ -74,13 +81,29 @@
             </select>
           </div>
           <input type="submit" value ="Create!">
+
+          <label for ="dropDownBase">Base</label>
+          <select id="dropDownBase" name="dropdown-1">
+          </select>
+          <label for ="dropDownCitrus">Citrus</label>
+          <select id="dropDownCitrus" name="dropdown-2">
+          </select>
+          <label for ="dropDownBitter">Bitter</label>
+          <select id="dropDownBitter" name="dropdown-3">
+          </select>
+          <label for ="dropDownSweet">Sweet</label>
+          <select id="dropDownSweet" name="dropdown-4">
+          </select>
+         <input type="submit" value ="Submit"> 
+
         </form>
       </section>
-      
-      <section>
+
+      <section id="recipe" hidden>
         <img />
-        <p id="recipe"></p>
+        <p ></p>
       </section>
+
     </main>
     
     <footer>
