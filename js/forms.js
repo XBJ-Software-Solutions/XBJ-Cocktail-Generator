@@ -62,12 +62,12 @@ bitterFunction();
 sweetFunction();
 
 
-let ingredientsForm = document.getElementById('ingredientsForm');
+
 let baseSelector = document.getElementById('dropDownBase');
 let citrusSelector = document.getElementById('dropDownCitrus');
 let bitterSelector = document.getElementById('dropDownBitter');
 let sweetSelector = document.getElementById('dropDownSweet');
-let selectedIngredients = [];
+
 
 function handleSelection (event) {
   let userSelection = event.target.value
@@ -80,6 +80,7 @@ function handleSelection (event) {
   };
   console.log (selectedIngredients);
   removeRecipe();
+};
 
   // Render Image function 
   function renderImage () {
@@ -108,7 +109,6 @@ function handleSelection (event) {
 
   }
 
-  // renderImage();
   
 baseSelector.addEventListener('change', handleSelection);
 citrusSelector.addEventListener('change', handleSelection);
@@ -116,9 +116,6 @@ bitterSelector.addEventListener('change', handleSelection);
 sweetSelector.addEventListener('change', handleSelection);
 
 
-    renderImage();
-    }
-  );
 
 function renderRecipe () {
   let recipeDisplay = document.getElementById('recipe');
@@ -141,4 +138,3 @@ ingredientsForm.addEventListener("submit", function(event) {
   // renderImage(); this function hasn't been made yet
   }
 );
-  
