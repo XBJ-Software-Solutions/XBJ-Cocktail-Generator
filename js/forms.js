@@ -73,8 +73,16 @@ function handleSelection (event) {
 
 
   function renderRecipe () {
+
+    let recipeDisplay = document.getElementById('something');
+    let recipeElement = document.createElement('p');
+    
+    //unitOfMeasure is written as unitofMeasure
+    recipeElement.textContent = `Here you go! Mix ${selectedIngredients[0].volume}${selectedIngredients[0].unitofMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume}${selectedIngredients[1].unitofMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume}${selectedIngredients[2].unitofMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`
+    recipeDisplay.appendChild(recipeElement);
     let recipeDisplay = document.getElementById('recipe');
     recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume}${selectedIngredients[0].unitofMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume}${selectedIngredients[1].unitofMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume}${selectedIngredients[2].unitofMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
+
   }
 
 
