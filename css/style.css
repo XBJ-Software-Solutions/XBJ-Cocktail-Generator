@@ -115,6 +115,46 @@ margin-left: 2vw;
 margin-right: 0.5vw;
 }
 
+
+#dropDowns {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  border-radius: 20px;
+  border: 3px solid;
+  border-color: #111;
+  background: rgb(241, 145, 89);
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+label {
+  display: block;
+  font-family: cursive;
+  font-size: large;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+input[type="submit"] {
+  color: white;
+  border: solid 2px #111;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #07444a;
+  font-size: 1.5vw;
+padding: 0.5vw;
+transition: background-color 0.3s;
+color: aliceblue;
+}
+
+
+
+
 select {
   font-size: 1.5vw;
   align-self: center;
@@ -142,24 +182,7 @@ select {
 
 
 /* --------------------------------- Button Styles---------------------------------*/
-button {
-  font-size: 1.5vw;
-border-radius: 10px;
-background: #80b584;
-padding: 0.5vw;
-transition: background-color 0.3s;
-color: aliceblue;
 
-}
-
-button:hover {
-  cursor: pointer;
-  background: #07444a;
-}
-
-select:hover {
-  cursor: pointer;
-} 
 
 footer {
   font-size: 1.5vw;
@@ -167,4 +190,5 @@ footer {
   padding: 20px;
   margin-top: 30px;
   background: rgb(241, 145, 89);
+
 }
