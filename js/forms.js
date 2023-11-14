@@ -1,14 +1,7 @@
-let ingredientsForm = document.getElementById('ingredientsForm');
-let options = document.querySelectorAll('option');
-let selectedIngredients = [];
-
-console.log(options);
-
 let base = document.getElementById('dropDownBase');
 let citrus = document.getElementById('dropDownCitrus');
 let bitter = document.getElementById('dropDownBitter');
 let sweet = document.getElementById('dropDownSweet');
-console.log(options);
 
 let baseFunction = function(){
   for(let i = 0;i < baseSpirits.length; i++){
@@ -45,49 +38,53 @@ let sweetFunction = function(){
     sweet.appendChild(sweetOption);
   }
 }
+baseFunction();
+citrusFunction();
+bitterFunction();
+sweetFunction();
 
-function handleSelectionBase (event) {
-  let userBase = event.target.name
-  console.log (userBase);
-  if (event.target.value === baseSpirits[0].name) { 
-    selectedIngredients.push(this);
+
+let ingredientsForm = document.getElementById('ingredientsForm');
+let baseSelector = document.getElementById('dropDownBase');
+let citrusSelector = document.getElementById('dropDownCitrus');
+let bitterSelector = document.getElementById('dropDownBitter');
+let sweetSelector = document.getElementById('dropDownSweet');
+// let options = document.querySelectorAll('option');
+let selectedIngredients = [];
+
+// console.log(options);
+
+function handleSelection (event) {
+  let userSelection = event.target.value
+  console.log (userSelection);
+  for (let i = 0; i < allIngredients.length; i++) {
+    if (userSelection === allIngredients[i].name) { 
+      let userIngredient = allIngredients[i]
+      selectedIngredients.push(userIngredient);
+    };
   };
+  console.log (selectedIngredients);
 };
-console.log (selectedIngredients);
 
-for(let i = 0; i < options.length; i++) {s
-    options[i].addEventListener('changes', handleSelectionBase)
-      // console.log(event.target.name, event.target.value);
-
-      // if (event.target.value === allIngredients[0].name) { 
-        // selectedIngredients.push(this);
-        console.log (selectedIngredients);
-        console.log (allIngredients[0].name);
-      };
-      // selectedIngredients[event.target.name] = event.target.value;
+  baseSelector.addEventListener('change', handleSelection);
+  citrusSelector.addEventListener('change', handleSelection);
+  bitterSelector.addEventListener('change', handleSelection);
+  sweetSelector.addEventListener('change', handleSelection);
 
 
   function renderRecipe () {
-    let recipeDisplay = document.getElementById('something');
-    let recipeElement = document.createElement('p');
-    
-    recipeElement.textContent = `Here you go! Mix ${selectedIngredients[0].volume}${selectedIngredients[0].unitofMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume}${selectedIngredients[1].unitofMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume}${selectedIngredients[2].unitofMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`
-    recipeDisplay.appendChild(recipeElement);
+    let recipeDisplay = document.getElementById('recipe');
+    recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume}${selectedIngredients[0].unitofMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume}${selectedIngredients[1].unitofMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume}${selectedIngredients[2].unitofMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
   }
 
 
   ingredientsForm.addEventListener("submit", function(event) {
     event.preventDefault();
     ingredientsForm.reset();
-    // base.focus();
+    dropDownBase.focus();
+    console.log (selectedIngredients);
     renderRecipe();
-
     // renderImage(); this function hasn't been made yet
     }
   );
-
-
-  baseFunction();
-  citrusFunction();
-  bitterFunction();
-  sweetFunction();
+  // })
