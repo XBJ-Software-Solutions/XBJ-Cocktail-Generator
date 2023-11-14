@@ -4,6 +4,9 @@ let bitter = document.getElementById('dropDownBitter');
 let sweet = document.getElementById('dropDownSweet');
 
 let baseFunction = function(){
+  let blankOption = document.createElement('option');
+    blankOption.textContent = '';
+    base.appendChild(blankOption); 
   for(let i = 0;i < baseSpirits.length; i++){
     let baseName = baseSpirits[i].name;
     let baseOption = document.createElement('option');
@@ -13,6 +16,9 @@ let baseFunction = function(){
 }
 
 let citrusFunction = function(){
+  let blankOption = document.createElement('option');
+    blankOption.textContent = '';
+    citrus.appendChild(blankOption); 
   for(let i = 0; i < citrusIngredients.length; i++){
     let citrusName = citrusIngredients[i].name;
     let citrusOption = document.createElement('option');
@@ -22,6 +28,9 @@ let citrusFunction = function(){
 }
 
 let bitterFunction = function(){
+  let blankOption = document.createElement('option');
+    blankOption.textContent = '';
+    bitter.appendChild(blankOption); 
   for(let i = 0; i < bitterIngredients.length; i++){
     let bitterName = bitterIngredients[i].name;
     let bitterOption = document.createElement('option');
@@ -31,6 +40,9 @@ let bitterFunction = function(){
 }
 
 let sweetFunction = function(){
+  let blankOption = document.createElement('option');
+    blankOption.textContent = '';
+    sweet.appendChild(blankOption); 
   for (i = 0; i < sweetIngredients.length; i++){
     let sweetName = sweetIngredients[i].name;
     let sweetOption = document.createElement('option');
@@ -63,25 +75,24 @@ function handleSelection (event) {
   console.log (selectedIngredients);
 };
 
-  baseSelector.addEventListener('change', handleSelection);
-  citrusSelector.addEventListener('change', handleSelection);
-  bitterSelector.addEventListener('change', handleSelection);
-  sweetSelector.addEventListener('change', handleSelection);
+baseSelector.addEventListener('change', handleSelection);
+citrusSelector.addEventListener('change', handleSelection);
+bitterSelector.addEventListener('change', handleSelection);
+sweetSelector.addEventListener('change', handleSelection);
 
 
-  function renderRecipe () {
-    let recipeDisplay = document.getElementById('recipe');
-    recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
+function renderRecipe () {
+  let recipeDisplay = document.getElementById('recipe');
+  recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
+}
+
+ingredientsForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  ingredientsForm.reset();
+  dropDownBase.focus();
+  console.log (selectedIngredients);
+  renderRecipe();
+  // renderImage(); this function hasn't been made yet
   }
-
-
-  ingredientsForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    ingredientsForm.reset();
-    dropDownBase.focus();
-    console.log (selectedIngredients);
-    renderRecipe();
-    // renderImage(); this function hasn't been made yet
-    }
-  );
+);
   
