@@ -81,6 +81,7 @@ function handleSelection (event) {
     dropDownBase.focus();
     console.log (selectedIngredients);
     renderRecipe();
+    nameGenerator();
     // renderImage(); this function hasn't been made yet
     }
   );

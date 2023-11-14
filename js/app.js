@@ -1,4 +1,5 @@
 let nameArray = [];
+let recipeHeading = document.getElementById('recipeHeading');
 function DrinkName(name){
   this.name = name;
   nameArray.push(this.name);
@@ -11,7 +12,7 @@ let nameGenerator = function(){
   let randomNumber = pickRandomName();
   let randomName = nameArray[randomNumber];
   console.log(randomName);
-
+  recipeHeading.textContent = randomName;
   let generatedName = [randomName];
 }
 
@@ -25,4 +26,3 @@ new DrinkName('Mystic Mule');
 new DrinkName('Raspberry Breeze');
 new DrinkName('Moonlit Mojito');
 new DrinkName('Starry Sangria');
-// nameGenerator();
