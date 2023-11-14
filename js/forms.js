@@ -116,7 +116,6 @@ bitterSelector.addEventListener('change', handleSelection);
 sweetSelector.addEventListener('change', handleSelection);
 
 
-
 function renderRecipe () {
   let recipeDisplay = document.getElementById('recipe');
   recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
@@ -135,6 +134,8 @@ ingredientsForm.addEventListener("submit", function(event) {
   dropDownBase.focus();
   console.log (selectedIngredients);
   renderRecipe();
-  // renderImage(); this function hasn't been made yet
+  nameGenerator();
+  // renderImage();
   }
 );
+
