@@ -83,8 +83,8 @@ function handleSelection (event) {
 };
 
   // Render Image function 
+  let imageArray = [];
   function renderImage () {
-    let imageArray = [];
     let ImageMap = function(src, alt){
       this.src = src;
       this.alt = alt;
@@ -92,20 +92,20 @@ function handleSelection (event) {
       imageArray.push(this);
     }
 
+    let tequilaImage = new ImageMap ('img/tequila.jpg', 'tequila');
+    let rumImage = new ImageMap ('img/rum.jpg', 'rum');
+    let whiskeyImage = new ImageMap ('img/whiskey.jpg', 'whiskey');
+    let ginImage = new ImageMap ('img/gin.jpg', 'gin');
+  console.log(imageArray);
+
     for(let i = 0; i < imageArray.length; i++) {
       if(selectedIngredients[0].name === imageArray[i].alt) {
         drinkImage.src = imageArray[i].src;
         drinkImage.alt = imageArray[i].alt;
       } 
+      console.log(drinkImage.src);
     }
-
     
-
-      let tequilaImage = new ImageMap ('img/tequila.jpg', 'tequila');
-      let rumImage = new ImageMap ('img/rum.jpg', 'rum');
-      let whiskeyImage = new ImageMap ('img/whiskey.jpg', 'whiskey');
-      let ginImage = new ImageMap ('img/gin.jpg', 'gin');
-    console.log(imageArray);
 
   }
 
@@ -126,6 +126,13 @@ function removeRecipe() {
   if (recipeDisplay.textContent.trim() !== '') {
     recipeDisplay.textContent = '';
   };
+  if (drinkImage.src.trim() !== '') {
+    drinkImage.src = '';
+    drinkImage.alt = '';
+  };
+  if (recipeHeading.textContent.trim() !== '') {
+    recipeHeading.textContent = '';
+}
 }
 
 ingredientsForm.addEventListener("submit", function(event) {
@@ -135,7 +142,7 @@ ingredientsForm.addEventListener("submit", function(event) {
   console.log (selectedIngredients);
   renderRecipe();
   nameGenerator();
-  // renderImage();
+  renderImage();
   }
 );
 
