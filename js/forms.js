@@ -73,6 +73,7 @@ function handleSelection (event) {
     };
   };
   console.log (selectedIngredients);
+  removeRecipe();
 };
 
 baseSelector.addEventListener('change', handleSelection);
@@ -84,6 +85,13 @@ sweetSelector.addEventListener('change', handleSelection);
 function renderRecipe () {
   let recipeDisplay = document.getElementById('recipe');
   recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, and ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
+}
+
+function removeRecipe() {
+  let recipeDisplay = document.getElementById('recipe');
+  if (recipeDisplay.textContent.trim() !== '') {
+    recipeDisplay.textContent = '';
+  };
 }
 
 ingredientsForm.addEventListener("submit", function(event) {
