@@ -161,10 +161,6 @@ padding-top: ;
 
 /* --------------------------------- Dropdown List Styles---------------------------------*/
 
-
-
-
-
 select {
   font-size: 1.5vw;
   color: aliceblue;
@@ -175,7 +171,6 @@ select:hover option {
   display: block;
   
 } 
-
 
 #dropDownBase {
   background: #3c71a5;
@@ -195,26 +190,45 @@ select:hover option {
 }
 /* --------------------------------- Recipe Styles---------------------------------*/
 
+
 #recipeRender {
   display: flex;
-  border: 5px solid black;
+  /* border: 5px solid black; */
+align-items: center;
 }
 
 #recipeList {
-  border: 5px solid black;
+  /* border: 5px solid black; */
+font-size: 2vw;
+list-style-type: disc;
+line-height: 3vw;
+padding: 4vw;
+}
+#recipeList p {
+font-weight: 700;
+}
 
+#recipe li {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+#recipeImage {
+  width: 40vw;
 }
 
 
-/* <div id="recipeRender">
-   <h2 id="recipeHeading"></h2>
 
-     <div>
+/* <div id="cocktail" style="display: none;">
+
+         <h2 id="recipeHeading"></h2>
+<div id="recipeRender">
+
         <img id="recipeImage" />
       <section id="recipe">
         <ul id="recipeList"></ul>
         <!-- <p></p> -->
-     </div>
+     
+    </div>
     </div> */
 
 /* --------------------------------- Footer Styles---------------------------------*/
