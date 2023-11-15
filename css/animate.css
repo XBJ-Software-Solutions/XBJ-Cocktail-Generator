@@ -1,0 +1,296 @@
+* {
+    margin: 0 auto;
+    user-select: none;
+    font-size: 140%;
+    font-family: 'Great Vibes', cursive;
+  }
+  body {
+    background-color: beige;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+  }
+  
+  p {
+    margin: 0 auto;
+    position: absolute;
+    display: block;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 1rem;
+    right: 0;
+    color: #07444a;
+    font-size: 2rem;
+    
+  }
+  
+  .cheersLine1 {
+    width: 2px;
+    height: 18px;
+    background: #07444a;
+    .leftside();
+    top: -7rem;
+    left: 1.5rem;
+    border-radius: 1rem;
+    transform: rotate(50deg);
+    animation: moveright 5s infinite ease-in-out;
+  }
+  
+  .cheersLine2 {
+    width: 2px;
+    height: 18px;
+    background: #07444a;
+    .leftside();
+    top: -8rem;
+    left: 0rem;
+    border-radius: 1rem;
+    animation: movemiddle 5s infinite ease-in-out;
+  }
+  
+  .cheersLine3 {
+    width: 2px;
+    height: 18px;
+    background: #07444a;
+    .leftside();
+    top: -7rem;
+    left: -1.5rem;
+    border-radius: 1rem;
+    transform: rotate(-50deg);
+    animation: moveleft 5s infinite ease-in-out;
+  }
+  
+  @glass: rgba(135, 164, 196, 0.5);
+  
+  .leftside {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: -110px;
+    top: 0;
+    right: 0;
+  }
+  
+  .rightside {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 110px;
+    top: 0;
+    right: 0;
+  }
+  
+  .glass-left {
+    display: block;
+    text-align: center;
+    .leftside();
+    background: @glass;
+    border-radius: 0.5rem 0.5rem 5rem 5rem;
+    width: 2.3rem;
+    height: 4.9rem;
+    border-left: 0.2rem solid rgba(135, 164, 196, 0.75);
+    border-right: 0.2rem solid rgba(135, 164, 196, 0.75);      
+    border-top: .2rem solid rgba(135,164,196,0.3);
+    animation: tilt-leftside 5s infinite;
+    animation-timing-function: ease-out;
+    
+    // glass shine
+    &:before {
+      content: '';
+      display: block;
+      height: 2.2rem;
+      width: 0.25rem;
+      background: rgba(255,255,255,0.5);
+      top: 0.2rem;
+      left: 0.2rem;
+      border-radius: 1rem;
+      position: absolute;
+    }
+    
+    .stem{
+      display: block;
+      background: rgba(135, 164, 196, 0.5);
+      border-radius: 0;
+      width: 0.4rem;
+      height: 2.6rem;
+      margin: 0 auto;
+      position: relative;
+      top: 4.9rem;
+      
+      // champagne
+      &:before {
+        content: '';
+        background: rgb(241, 145, 89);
+        height: 3.3rem;
+        width: 2.2rem;
+        display: block;
+        position: relative;
+        z-index: -1;
+        top: -3.5rem;
+        left: -0.9rem;
+        border-radius: 0.5rem 0.5rem 2rem 2rem;
+        margin: 0 auto;
+      }
+      &:after {
+        content: '';
+        display: block;
+        background: rgba(135, 164, 196, 0.5);
+        border-radius: 1.5rem 1.5rem 0.2rem 0.2rem;
+        border-top: .2rem solid rgba(255,255,255,0.5);
+        border-left: .1rem solid rgba(135, 164, 196, 0.8); 
+        border-right: .1rem solid rgba(135, 164, 196, 0.8);
+        width: 2rem;
+        height: 0.2rem;
+        left: -0.9rem;
+        margin: 0 auto;
+        position: absolute;
+        top: 2.6rem;
+      }
+    } 
+  }
+  
+  .glass-right {
+    display; flex-direction: row;
+    text-align: center;
+    .rightside();
+    background: @glass;
+    border-radius: 0.5rem 0.5rem 5rem 5rem;
+    width: 2.3rem;
+    height: 4.9rem;
+    border-left: 0.2rem solid rgba(135, 164, 196, 0.75);
+    border-right: 0.2rem solid rgba(135, 164, 196, 0.75);      
+    border-top: .2rem solid rgba(135,164,196,0.3);
+    animation: tilt-rightside 5s infinite;
+    animation-timing-function: ease-out;
+    
+    
+    // glass shine
+    &:before {
+      content: '';
+      display: block;
+      height: 2.2rem;
+      width: 0.25rem;
+      background: rgba(255,255,255,0.5);
+      top: 0.2rem;
+      left: 1.9rem;
+      border-radius: 1rem;
+      position: absolute;
+   
+    }
+    
+    .stem{
+      display: block;
+      background: rgba(135, 164, 196, 0.5);
+      border-radius: 0;
+      width: 0.4rem;
+      height: 2.6rem;
+      margin: 0 auto;
+      position: relative;
+      top: 4.9rem;
+      
+      // champagne
+      &:before {
+        content: '';
+        background: rgb(241, 145, 89);
+        height: 3.3rem;
+        width: 2.2rem;
+        display: block;
+        position: relative;
+        z-index: -1;
+        top: -3.5rem;
+        left: -0.9rem;
+        border-radius: 0.5rem 0.5rem 2rem 2rem;
+        margin: 0 auto;
+      }
+      &:after {
+        content: '';
+        display: block;
+        background: rgba(135, 164, 196, 0.5);
+        border-radius: 1.5rem 1.5rem 0.2rem 0.2rem;
+        border-top: .2rem solid rgba(255,255,255,0.5);
+        border-left: .1rem solid rgba(135, 164, 196, 0.8); 
+        border-right: .1rem solid rgba(135, 164, 196, 0.8);
+        width: 2rem;
+        height: 0.2rem;
+        left: -0.9rem;
+        margin: 0 auto;
+        position: absolute;
+        top: 2.6rem;
+        
+      }
+    } 
+  }
+  
+  @keyframes tilt-leftside {
+    0%   {transform: rotate(0)}
+    50%  {transform: rotate(26deg)}
+    100% {transform: rotate(0)}
+  }
+  
+  @keyframes tilt-rightside {
+    0%   {transform: rotate(0)}
+    50%  {transform: rotate(-26deg)}
+    100% {transform: rotate(0)}
+  }
+  
+  @keyframes moveright {
+    0% {
+      top:-7rem;
+      left: 1.5rem;
+      opacity: 0;
+    }
+    50% {
+      top:-8rem;
+      left: 2.5rem;
+      opacity: 0.8;
+    }
+    100% {
+      top:-7rem;
+      left: 1.5rem;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes movemiddle {
+    0% {
+      top:-8rem;
+      opacity: 0;
+    }
+    50% {
+      top:-9rem;
+      opacity: 0.8;
+    }
+    100% {
+      top:-8rem;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes moveleft {
+    0% {
+      top:-7rem;
+      left: -1.5rem;
+      opacity: 0;
+    }
+    50% {
+      top:-8rem;
+      left: -2.5rem;
+      opacity: 0.8;
+    }
+    100% {
+      top:-7rem;
+      left: -1.5rem;
+      opacity: 0;
+    }
+  }
+  .drinkResponsible {
+    text-align: center;
+    color: #07444a;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 10rem; /* Adjust the distance from the bottom as needed */
+    left: 0;
+    right: 0;
+  }
