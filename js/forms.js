@@ -117,18 +117,57 @@ function renderRecipe() {
 }  
 
 function removeRecipe() {
-  let list = document.getElementById("recipeList");
-  while (list.firstChild) {
-    list.removeChild(list.firstChild);
-  }
-  if (drinkImage.src.trim() !== "") {
-    drinkImage.src = "";
-    drinkImage.alt = "";
-  }
-  if (recipeHeading.textContent.trim() !== "") {
-    recipeHeading.textContent = "";
-  }
+  let recipeList = document.getElementById("recipeList");
+  let recipeImage = document.getElementById("recipeImage");
+  let recipeHeading = document.getElementById("recipeHeading");
+  let cocktailSection = document.getElementById("cocktail");
+
+  recipeList.innerHTML = "";
+  recipeImage.src = "";
+  recipeImage.alt = "";
+  recipeHeading.textContent = "";
+
+  cocktailSection.style.display = "none";
 }
+
+ingredientsForm.addEventListener("change", function () {
+  removeRecipe();
+});
+
+ingredientsForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  ingredientsForm.reset();
+  dropDownBase.focus();
+
+  renderRecipe();
+  nameGenerator();
+  renderImage();
+  selectedIngredients = [];
+  if (imageArray.length !== 0) {
+    imageArray = [];
+  }
+});
+
+
+
+
+
+
+
+// function removeRecipe() {
+//   let cocktail = document.getElementById("cocktail");
+//   while (list.firstChild) {
+//     list.removeChild(list.firstChild);
+//   }
+//   if (drinkImage.src.trim() !== "") {
+//     drinkImage.src = "";
+//     drinkImage.alt = "";
+//   }
+//   if (recipeHeading.textContent.trim() !== "") {
+//     recipeHeading.textContent = "";
+//   }
+ 
+// }
 
 ingredientsForm.addEventListener("submit", function (event) {
   event.preventDefault();
