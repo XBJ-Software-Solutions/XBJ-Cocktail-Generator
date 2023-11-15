@@ -17,7 +17,7 @@ function populateDropdown(dropdown, allIngredients, ingredientDescriptions) {
 
   for (let i = 0; i < allIngredients.length; i++) {
     let ingredient = allIngredients[i];
-    let ingredientName = allIngredients[i].name;
+    let ingredientName = ingredient.name;
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
 
@@ -25,7 +25,7 @@ function populateDropdown(dropdown, allIngredients, ingredientDescriptions) {
 
     dropdown.appendChild(ingredientOption);
   }
-  console.log(ingredientDescriptions )
+  console.log()
 }
 
 populateDropdown(base, baseSpirits, ingredientDescriptions);
