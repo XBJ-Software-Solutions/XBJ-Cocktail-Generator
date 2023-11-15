@@ -39,28 +39,41 @@ let sweetSelector = document.getElementById("dropDownSweet");
 // commented out lines are starting to attempt to limit base spirit selections to one
 function handleSelection(event) {
   let userSelection = event.target.value;
-  // let selectedBase = selectedIngredients.find(ingredient => ingredient.type === 'base');
-
-  // Check if a base has already been selected
-  // if (selectedBase) {
-  //   alert('You may only select one base spirit. Your selection has been changed.');
-  //   event.target.value = '';
-  // } else {
   for (let i = 0; i < allIngredients.length; i++) {
     if (userSelection === allIngredients[i].name) {
       let userIngredient = allIngredients[i];
-      // if (selectedIngredients.some(ingredient => ingredient.type !== 'base'))
       selectedIngredients.push(userIngredient);
-    }
-  }
+    };
+  };
   console.log(selectedIngredients);
-  removeRecipe();
-  }
+};
+
+//   function handleBaseSelection(event) {
+//     let userSelection = event.target.value;
+//     let selectedBase = selectedIngredients.find(ingredient => ingredient.type === 'base');
+  
+//     Check if a base has already been selected
+//     if (selectedBase) {
+//       alert('You may only select one base spirit. Your selection has been changed.');
+//       event.target.value = '';
+//     } else {
+//     for (let i = 0; i < allIngredients.length; i++) {
+//       if (userSelection === allIngredients[i].name) {
+//         let userIngredient = allIngredients[i];
+//         if (selectedIngredients.some(ingredient => ingredient.type !== 'base'))
+//         selectedIngredients.push(userIngredient);
+//       }
+//     }
+//   console.log(selectedIngredients);
+//   removeRecipe();
+//   }
 // }
 
 // Render Image function
 let imageArray = [];
 function renderImage() {
+  let baseIndex = selectedIngredients.find(ingredient => ingredient.type === 'base');
+  console.log(baseIndex);
   let ImageMap = function (src, alt) {
     this.src = src;
     this.alt = alt;
@@ -71,14 +84,12 @@ function renderImage() {
   let rumImage = new ImageMap("img/rum.jpg", "Rum");
   let whiskeyImage = new ImageMap("img/whiskey.jpg", "Whiskey");
   let ginImage = new ImageMap("img/gin.jpg", "Gin");
-
-  // for (let i = 0; i < imageArray.length; i++) {
+  
     if (selectedIngredients.some(ingredient => ingredient.type === 'base')) {
-      let baseIndex = selectedIngredients.findIndex(ingredient => ingredient.type === 'base');
-      drinkImage.src = imageArray[baseIndex].src;
-      drinkImage.alt = imageArray[baseIndex].alt;
+      console.log(selectedIngredients);
+      drinkImage.src  = (`img/${baseIndex.name}.jpg`);
+      drinkImage.alt  = `${baseIndex.name}`;
     }
-    // if (selectedIngredients[0].name === imageArray[i].alt) {
 }
   
 
@@ -118,18 +129,20 @@ function renderRecipe() {
 }  
 
 function removeRecipe() {
-  let list = document.getElementById("recipeList");
-  while (list.firstChild) {
-    list.removeChild(list.firstChild);
-  }
-  if (drinkImage.src.trim() !== "") {
-    drinkImage.src = "";
-    drinkImage.alt = "";
-  }
-  if (recipeHeading.textContent.trim() !== "") {
-    recipeHeading.textContent = "";
-  }
+  let recipeList = document.getElementById("recipeList");
+  let recipeImage = document.getElementById("recipeImage");
+  let recipeHeading = document.getElementById("recipeHeading");
+  let cocktailSection = document.getElementById("cocktail");
+  recipeList.innerHTML = "";
+  recipeImage.src = "";
+  recipeImage.alt = "";
+  recipeHeading.textContent = "";
+  cocktailSection.style.display = "none";
 }
+
+ingredientsForm.addEventListener("click", function () {
+  removeRecipe();
+});
 
 ingredientsForm.addEventListener("submit", function (event) {
   event.preventDefault();
