@@ -34,8 +34,36 @@ let citrusSelector = document.getElementById("dropDownCitrus");
 let bitterSelector = document.getElementById("dropDownBitter");
 let sweetSelector = document.getElementById("dropDownSweet");
 
+
+// function handleSelection(event) {
+//   let userSelection = event.target.value;
+
+//   // Check if the ingredient is already in the selectedIngredients array
+//   let existingIngredientIndex = selectedIngredients.findIndex(
+//     (ingredient) => ingredient.name === userSelection
+//   );
+
+//   // If the ingredient is already selected, remove it; otherwise, add it
+//   if (existingIngredientIndex !== -1) {
+//     selectedIngredients.splice(existingIngredientIndex, 1);
+//   } else {
+//     for (let i = 0; i < allIngredients.length; i++) {
+//       if (userSelection === allIngredients[i].name) {
+//         let userIngredient = allIngredients[i];
+//         selectedIngredients.push(userIngredient);
+//       }
+//     }
+//   }
+
+//   removeRecipe();
+// }
+
+
+
 function handleSelection(event) {
   let userSelection = event.target.value;
+  //new
+  // selectedIngredients = [];
   for (let i = 0; i < allIngredients.length; i++) {
     if (userSelection === allIngredients[i].name) {
       let userIngredient = allIngredients[i];
@@ -72,6 +100,26 @@ baseSelector.addEventListener("change", handleSelection);
 citrusSelector.addEventListener("change", handleSelection);
 bitterSelector.addEventListener("change", handleSelection);
 sweetSelector.addEventListener("change", handleSelection);
+
+// function renderRecipe() {
+//   let recipeDisplay = document.getElementById("recipe");
+//   let recipeText = "Here you go! Mix ";
+  
+//   for (let i = 0; i < selectedIngredients.length; i++) {
+//     recipeText += `${selectedIngredients[i].volume} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
+
+//     if (i < selectedIngredients.length - 1) {
+//       recipeText += ", ";
+//     } else {
+//       recipeText += ". Stir over ice and pour into a chilled cocktail glass. Enjoy!";
+//     }
+//   }
+
+//   recipeDisplay.textContent = recipeText;
+// }
+
+
+
 
 function renderRecipe() {
   let recipeDisplay = document.getElementById("recipe");
