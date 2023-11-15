@@ -59,34 +59,46 @@
       
       <section id="dropDowns">
         <form id="ingredientsForm">
-          <label for ="dropDownBase">Base</label>
-          <select id="dropDownBase" name="dropdown-1">
-          </select>
-          <label for ="dropDownCitrus">Citrus</label>
-          <select id="dropDownCitrus" name="dropdown-2">
-          </select>
-          <label for ="dropDownBitter">Bitter</label>
-          <select id="dropDownBitter" name="dropdown-3">
-          </select>
-          <label for ="dropDownSweet">Sweet</label>
-          <select id="dropDownSweet" name="dropdown-4">
-          </select>
-          <!-- <input type="submit" value ="Submit"> -->
+
+          <div class="dropDownSelector">
+            <label for ="dropDownBase">Base</label>
+            <select id="dropDownBase" name="dropdown-1" required>
+            </select>
+          </div>
+          <div class="dropDownSelector">  
+            <label for ="dropDownCitrus">Citrus</label>
+            <select id="dropDownCitrus" name="dropdown-2">
+            </select>
+          </div>
+          <div class="dropDownSelector">
+            <label for ="dropDownBitter">Bitter</label>
+            <select id="dropDownBitter" name="dropdown-3">
+            </select>
+          </div>
+          <div class="dropDownSelector">
+            <label for ="dropDownSweet">Sweet</label>
+            <select id="dropDownSweet" name="dropdown-4">
+            </select>
+          </div>
+          <input type="submit" value ="Create!">
+
         </form>
       </section>
 
-      <section id="recipe" hidden>
-        <img />
-        <p ></p>
+      <h2 id="recipeHeading"></h2>
+      <img id="recipeImage" />
+      <section id="recipe">
+        <p></p>
       </section>
-      <button>Submit!</button>
+
     </main>
     
     <footer>
 &copy; XBJ Software Solutions 
     </footer>
-    <script src="js/app.js"></script>
-    <script src="js/ingredients.js"></script>
+        <script src="js/ingredients.js"></script>
     <script src="js/forms.js"></script>
+
+    <script src="js/app.js"></script>
   </body>
   </html>
