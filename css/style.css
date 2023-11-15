@@ -193,6 +193,29 @@ select:hover option {
   background: #74a041;
 
 }
+/* --------------------------------- Recipe Styles---------------------------------*/
+
+#recipeRender {
+  display: flex;
+  border: 5px solid black;
+}
+
+#recipeList {
+  border: 5px solid black;
+
+}
+
+
+/* <div id="recipeRender">
+   <h2 id="recipeHeading"></h2>
+
+     <div>
+        <img id="recipeImage" />
+      <section id="recipe">
+        <ul id="recipeList"></ul>
+        <!-- <p></p> -->
+     </div>
+    </div> */
 
 /* --------------------------------- Footer Styles---------------------------------*/
 
