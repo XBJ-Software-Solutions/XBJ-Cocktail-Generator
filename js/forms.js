@@ -123,7 +123,22 @@ sweetSelector.addEventListener("change", handleSelection);
 
 function renderRecipe() {
   let recipeDisplay = document.getElementById("recipe");
-  recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}, and ${selectedIngredients[3].volume} ${selectedIngredients[3].unitOfMeasure} of ${selectedIngredients[3].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
+  let list = document.getElementById("recipeList");
+
+  let recipeGreet = document.createElement("p");
+  recipeGreet.textContent = "Here you go! Mix: ";
+  list.appendChild(recipeGreet);
+
+  for (let i=0; i <selectedIngredients.length; i++ ){
+    let li = document.createElement("li");
+    li.textContent= `${selectedIngredients[i].volume} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
+    list.appendChild(li);
+  }
+  let recipeEnjoy = document.createElement("p");
+  recipeEnjoy.textContent = "Stir over ice and pour into a chilled cocktail glass. Enjoy! ";
+  list.appendChild(recipeEnjoy);
+
+  // recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}, and ${selectedIngredients[3].volume} ${selectedIngredients[3].unitOfMeasure} of ${selectedIngredients[3].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
 }
 
 function removeRecipe() {
