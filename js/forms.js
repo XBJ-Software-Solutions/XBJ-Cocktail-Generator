@@ -110,7 +110,7 @@ function renderRecipe() {
     recipeEnjoy.textContent = 'Stir over ice and pour into a chilled cocktail glass. Enjoy!';
     list.appendChild(recipeEnjoy);
   }
-  // document.getElementById("cocktail").style.display = "block";
+  document.getElementById("cocktail").style.display = "block";
 }  
 
 function removeRecipe() {
