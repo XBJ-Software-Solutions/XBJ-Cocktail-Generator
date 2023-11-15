@@ -21,6 +21,8 @@ function populateDropdown(dropdown, allIngredients) {
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
     ingredientOption.title = allIngredients[i].description || "";
+    ingredientOption.classList.add("tooltip");
+    
     dropdown.appendChild(ingredientOption);
   }
 }
@@ -103,6 +105,7 @@ function renderRecipe() {
     list.appendChild(li);
   }
   let recipeEnjoy = document.createElement("p");
+
   if (selectedIngredients.some(ingredient => ingredient.type === 'citrus')) {
     recipeEnjoy.textContent = 'Shake over ice and pour through hawthorne strainer into a chilled cocktail glass. Enjoy!';
     list.appendChild(recipeEnjoy);
