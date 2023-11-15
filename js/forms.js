@@ -130,7 +130,7 @@ function removeRecipe() {
   cocktailSection.style.display = "none";
 }
 
-ingredientsForm.addEventListener("change", function () {
+ingredientsForm.addEventListener("click", function () {
   removeRecipe();
 });
 
