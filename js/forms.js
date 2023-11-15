@@ -10,28 +10,25 @@ let citrus = document.getElementById("dropDownCitrus");
 let bitter = document.getElementById("dropDownBitter");
 let sweet = document.getElementById("dropDownSweet");
 
-function populateDropdown(dropdown, allIngredients, ingredientDescriptions) {
+function populateDropdown(dropdown, ingredientArray) {
   let blankOption = document.createElement("option");
   blankOption.textContent = "";
   dropdown.appendChild(blankOption);
 
-  for (let i = 0; i < allIngredients.length; i++) {
-    let ingredient = allIngredients[i];
-    let ingredientName = allIngredients[i].name;
+  for (let i = 0; i < ingredientArray.length; i++) {
+    let ingredientName = ingredientArray[i].name;
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
-
-    ingredientOption.title = ingredientDescriptions[i] || "";
-
+    ingredientOption.title = ingredientArray[i].description || '';
     dropdown.appendChild(ingredientOption);
+    console.log(ingredientOption.title)
   }
-  console.log(ingredientDescriptions )
 }
 
-populateDropdown(base, baseSpirits, ingredientDescriptions);
-populateDropdown(citrus, citrusIngredients, ingredientDescriptions);
-populateDropdown(bitter, bitterIngredients, ingredientDescriptions);
-populateDropdown(sweet, sweetIngredients, ingredientDescriptions);
+populateDropdown(base, baseSpirits);
+populateDropdown(citrus, citrusIngredients);
+populateDropdown(bitter, bitterIngredients);
+populateDropdown(sweet, sweetIngredients);
 
 let baseSelector = document.getElementById("dropDownBase");
 let citrusSelector = document.getElementById("dropDownCitrus");
