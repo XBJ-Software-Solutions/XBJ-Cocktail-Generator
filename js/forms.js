@@ -72,14 +72,15 @@ function renderImage() {
   let whiskeyImage = new ImageMap("img/whiskey.jpg", "Whiskey");
   let ginImage = new ImageMap("img/gin.jpg", "Gin");
 
-  for (let i = 0; i < imageArray.length; i++) {
-    
-    if (selectedIngredients[0].name === imageArray[i].alt) {
-      drinkImage.src = imageArray[i].src;
-      drinkImage.alt = imageArray[i].alt;
+  // for (let i = 0; i < imageArray.length; i++) {
+    if (selectedIngredients.some(ingredient => ingredient.type === 'base')) {
+      let baseIndex = selectedIngredients.findIndex(ingredient => ingredient.type === 'base');
+      drinkImage.src = imageArray[baseIndex].src;
+      drinkImage.alt = imageArray[baseIndex].alt;
     }
-  }
+    // if (selectedIngredients[0].name === imageArray[i].alt) {
 }
+  
 
 baseSelector.addEventListener("change", handleSelection);
 citrusSelector.addEventListener("change", handleSelection);
