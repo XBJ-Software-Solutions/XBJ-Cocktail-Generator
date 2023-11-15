@@ -21,6 +21,8 @@ function populateDropdown(dropdown, allIngredients) {
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
     ingredientOption.title = allIngredients[i].description || "";
+    ingredientOption.classList.add("tooltip");
+    
     dropdown.appendChild(ingredientOption);
   }
 }
@@ -122,7 +124,7 @@ sweetSelector.addEventListener("change", handleSelection);
 
 
 function renderRecipe() {
-  let recipeDisplay = document.getElementById("recipe");
+  // let recipeDisplay = document.getElementById("recipe");
   let list = document.getElementById("recipeList");
 
   let recipeGreet = document.createElement("p");
@@ -137,6 +139,8 @@ function renderRecipe() {
   let recipeEnjoy = document.createElement("p");
   recipeEnjoy.textContent = "Stir over ice and pour into a chilled cocktail glass. Enjoy! ";
   list.appendChild(recipeEnjoy);
+
+  document.getElementById("cocktail").style.display = "block";
 
   // recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}, and ${selectedIngredients[3].volume} ${selectedIngredients[3].unitOfMeasure} of ${selectedIngredients[3].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
 }
