@@ -107,6 +107,19 @@ h2 {
   color: aliceblue;
 }
 
+#makeDrink {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  border: 2px solid #111;
+}
+
+#makeDrink button {
+  height: 32px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
 /* --------------------------------- Form Styles---------------------------------*/
 
 
