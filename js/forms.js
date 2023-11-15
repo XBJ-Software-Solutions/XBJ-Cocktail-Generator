@@ -21,7 +21,6 @@ function populateDropdown(dropdown, allIngredients) {
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
     ingredientOption.title = allIngredients[i].description || "";
-    ingredientOption.classList.add("tooltip");
     
     dropdown.appendChild(ingredientOption);
   }
@@ -72,14 +71,16 @@ function renderImage() {
   let whiskeyImage = new ImageMap("img/whiskey.jpg", "Whiskey");
   let ginImage = new ImageMap("img/gin.jpg", "Gin");
 
-  for (let i = 0; i < imageArray.length; i++) {
-    
-    if (selectedIngredients[0].name === imageArray[i].alt) {
-      drinkImage.src = imageArray[i].src;
-      drinkImage.alt = imageArray[i].alt;
+
+  // for (let i = 0; i < imageArray.length; i++) {
+    if (selectedIngredients.some(ingredient => ingredient.type === 'base')) {
+      let baseIndex = selectedIngredients.findIndex(ingredient => ingredient.type === 'base');
+      drinkImage.src = imageArray[baseIndex].src;
+      drinkImage.alt = imageArray[baseIndex].alt;
     }
-  }
+    // if (selectedIngredients[0].name === imageArray[i].alt) {
 }
+  
 
 baseSelector.addEventListener("change", handleSelection);
 citrusSelector.addEventListener("change", handleSelection);
@@ -133,41 +134,6 @@ function removeRecipe() {
 ingredientsForm.addEventListener("click", function () {
   removeRecipe();
 });
-
-ingredientsForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  ingredientsForm.reset();
-  dropDownBase.focus();
-
-  renderRecipe();
-  nameGenerator();
-  renderImage();
-  selectedIngredients = [];
-  if (imageArray.length !== 0) {
-    imageArray = [];
-  }
-});
-
-
-
-
-
-
-
-// function removeRecipe() {
-//   let cocktail = document.getElementById("cocktail");
-//   while (list.firstChild) {
-//     list.removeChild(list.firstChild);
-//   }
-//   if (drinkImage.src.trim() !== "") {
-//     drinkImage.src = "";
-//     drinkImage.alt = "";
-//   }
-//   if (recipeHeading.textContent.trim() !== "") {
-//     recipeHeading.textContent = "";
-//   }
- 
-// }
 
 ingredientsForm.addEventListener("submit", function (event) {
   event.preventDefault();
