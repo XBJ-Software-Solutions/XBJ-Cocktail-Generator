@@ -62,7 +62,7 @@ body {
 .cocktail-party {
   position: absolute;
   height:5px;
-  width:330px;
+  width:430px;
   background-color: #333;
   border-radius:5px;
 }
@@ -73,7 +73,8 @@ body {
   font-size:30px;  
   margin-top: 1em;
 }
-.green-drink {
+
+.blue-drink {
   position: absolute;
   width:25px;
   height: 25px;
@@ -81,6 +82,86 @@ body {
   border-radius:50%;
   top:-85px;
   left:35px;
+  background: repeating-conic-gradient(
+  #333 20deg, #333 30deg, #ffea00 35deg, #ffea00 70deg); 
+  transition: .3s ease;
+}
+
+.blue-drink:hover {
+  transform: translateY(-20px);
+}
+
+.blue-drink:before {
+  content:"";
+  position: absolute;
+  width:40px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 70px solid #333;
+  height:0;
+  top:12px;
+  left:10px;
+}
+
+.blue-drink:after {
+  content:"";
+  position: absolute;
+  width:32px;
+  border-top: 59px solid #3c71a5;
+  top:20px;
+  left:15.5px;
+  border-right: 8.5px solid transparent;
+  border-left: 8.5px solid transparent;
+  height:0;
+}
+
+.blueJ {
+  position: absolute;
+  width:46px;
+  border-top: 15px solid #fff;
+  top:16px;
+  left:15px;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  height:0;
+  z-index:1;
+}
+
+.blueJ:before {
+  content:"";
+  position: absolute;
+  width:20px;
+  height:60px;
+  border-top: 4px solid #333;
+  border-left: 4px solid #333;
+  top:-35px;
+  left:25px;
+  transform: rotate(10deg);
+}
+
+.blueJ:after {
+  content:"";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255,255,255,0.5);
+  top:8px;
+  left:8px;
+  transform: rotate(25deg);
+  box-shadow: 20px 20px rgba(255,255,255,0.5), 25px 5px rgba(255,255,255,0.5);
+}
+
+
+
+
+.green-drink {
+  position: absolute;
+  width:25px;
+  height: 25px;
+  border: 4px solid #333;
+  border-radius:50%;
+  top:-85px;
+  left:300px;
   background: repeating-conic-gradient(
   #333 20deg, #333 30deg, #ffea00 35deg, #ffea00 70deg); 
   transition: .3s ease;
@@ -106,7 +187,7 @@ body {
   content:"";
   position: absolute;
   width:32px;
-  border-top: 59px solid #70e000;
+  border-top: 59px solid #74a041;
   top:20px;
   left:15.5px;
   border-right: 8.5px solid transparent;
@@ -152,14 +233,13 @@ body {
 
 .martini {
   position: absolute;
-  position: absolute;
   width:0;
   height:0;
   border-bottom: 25px solid #333;
   border-right: 35px solid transparent;
   border-left: 35px solid transparent;
   top:-24px;
-  left:130px;
+  left:220px;
   transition: .3s ease;
 }
 
@@ -191,7 +271,6 @@ body {
 
 .glass {
   position: absolute;
-  position: absolute;
   border-top:50px solid #333;
   border-right: 50px solid transparent;
   border-left: 50px solid transparent;
@@ -216,7 +295,7 @@ body {
 .glass:after {
   content:"";
   position: absolute;
-  border-top:30px solid #ff9500;
+  border-top:30px solid  #ce8c2b;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
   width:0;
@@ -265,7 +344,7 @@ body {
   height: 8px;
   border: 5px solid #333;
   top:-13px;
-  left:220px;
+  left:130px;
   transition: .3s ease;
 }
 
@@ -281,7 +360,7 @@ body {
   height:35px;
   top:-45px;
   left:-5px;
-  box-shadow: inset 0 -20px #dd6e42;
+  box-shadow: inset 0 -20px  #de3c27;
 }
 
 .whiskey:after {
