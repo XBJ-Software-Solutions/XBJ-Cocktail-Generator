@@ -21,7 +21,7 @@ function populateDropdown(dropdown, allIngredients) {
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
     ingredientOption.title = allIngredients[i].description || "";
-    
+
     dropdown.appendChild(ingredientOption);
   }
 }
@@ -35,31 +35,47 @@ let citrusSelector = document.getElementById("dropDownCitrus");
 let bitterSelector = document.getElementById("dropDownBitter");
 let sweetSelector = document.getElementById("dropDownSweet");
 
-// commented out lines are starting to attempt to limit base spirit selections to one
 function handleSelection(event) {
   let userSelection = event.target.value;
-  // let selectedBase = selectedIngredients.find(ingredient => ingredient.type === 'base');
-
-  // Check if a base has already been selected
-  // if (selectedBase) {
-  //   alert('You may only select one base spirit. Your selection has been changed.');
-  //   event.target.value = '';
-  // } else {
   for (let i = 0; i < allIngredients.length; i++) {
     if (userSelection === allIngredients[i].name) {
       let userIngredient = allIngredients[i];
-      // if (selectedIngredients.some(ingredient => ingredient.type !== 'base'))
       selectedIngredients.push(userIngredient);
-    }
-  }
+
+    };
+  };
   console.log(selectedIngredients);
-  removeRecipe();
-  }
+};
+
+
+// commented out lines is an attempt to limit base spirit selections to one
+// function handleBaseSelection(event) {
+//   let userSelection = event.target.value;
+//   let selectedBaseTwice = selectedIngredients.find(ingredient => ingredient.type === 'base');
+
+//   // Check if a base has already been selected
+//   if (selectedBaseTwice) {
+//     alert('You may only select one base spirit. Please reselect the base spirit you would like to use.');
+//     event.target.value = '';
+//     // dropDownBase.reset();
+//   } else {
+//   for (let i = 0; i < allIngredients.length; i++) {
+//     if (userSelection === allIngredients[i].name) {
+//       let userIngredient = allIngredients[i];
+//       if (selectedIngredients.some(ingredient => ingredient.type !== 'base'))
+//       selectedIngredients.push(userIngredient);
+//     }
+//   }
+//   console.log(selectedIngredients);
+//   removeRecipe();
+//   }
 // }
 
 // Render Image function
 let imageArray = [];
 function renderImage() {
+  let baseIndex = selectedIngredients.find(ingredient => ingredient.type === 'base');
+  console.log(baseIndex);
   let ImageMap = function (src, alt) {
     this.src = src;
     this.alt = alt;
@@ -71,14 +87,13 @@ function renderImage() {
   let whiskeyImage = new ImageMap("img/whiskey.jpg", "Whiskey");
   let ginImage = new ImageMap("img/gin.jpg", "Gin");
 
-
-  // for (let i = 0; i < imageArray.length; i++) {
     if (selectedIngredients.some(ingredient => ingredient.type === 'base')) {
-      let baseIndex = selectedIngredients.findIndex(ingredient => ingredient.type === 'base');
-      drinkImage.src = imageArray[baseIndex].src;
-      drinkImage.alt = imageArray[baseIndex].alt;
+      console.log(selectedIngredients);
+      drinkImage.src  = (`img/${baseIndex.name.toLowerCase()}.jpg`);
+      console.log(drinkImage.src);
+      drinkImage.alt  = `${baseIndex.name}`;
     }
-    // if (selectedIngredients[0].name === imageArray[i].alt) {
+
 }
   
 
@@ -88,36 +103,43 @@ bitterSelector.addEventListener("change", handleSelection);
 sweetSelector.addEventListener("change", handleSelection);
 
 let totalVol = 4.0
+let ratioVol = 1.0
 function volumeCalc() {
+  let selectedVol = 0
   for (let i=0; i < selectedIngredients.length; i++) {
-    
-  }
+    selectedVol += selectedIngredients[i].volume;
+  };
+  console.log (selectedVol);
+  ratioVol = totalVol / selectedVol;
+  console.log (ratioVol);
 }
+
 function renderRecipe() {
-  // let recipeDisplay = document.getElementById("recipe");
   let list = document.getElementById("recipeList");
   let recipeGreet = document.createElement("p");
   recipeGreet.textContent = "Here you go! Mix: ";
   list.appendChild(recipeGreet);
-
+  // let typeRatio = 1;
+  // if 
+  
   for (let i=0; i <selectedIngredients.length; i++ ){
     let li = document.createElement("li");
-    li.textContent= `${selectedIngredients[i].volume} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
+    li.textContent= `${selectedIngredients[i].volume * ratioVol} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
     list.appendChild(li);
   }
-  let recipeEnjoy = document.createElement("p");
-
-  if (selectedIngredients.some(ingredient => ingredient.type === 'citrus')) {
+  let recipeEnjoy = document.createElement("p");  
+    if (selectedIngredients.some(ingredient => ingredient.type === 'citrus')) {
     recipeEnjoy.textContent = 'Shake over ice and pour through hawthorne strainer into a chilled cocktail glass. Enjoy!';
     list.appendChild(recipeEnjoy);
-  } else {
+    } else {
     recipeEnjoy.textContent = 'Stir over ice and pour into a chilled cocktail glass. Enjoy!';
     list.appendChild(recipeEnjoy);
-  }
+    }
   document.getElementById("cocktail").style.display = "block";
-}  
+  }  
 
 function removeRecipe() {
+
   let recipeList = document.getElementById("recipeList");
   let recipeImage = document.getElementById("recipeImage");
   let recipeHeading = document.getElementById("recipeHeading");
@@ -129,6 +151,7 @@ function removeRecipe() {
   recipeHeading.textContent = "";
 
   cocktailSection.style.display = "none";
+
 }
 
 ingredientsForm.addEventListener("click", function () {
@@ -139,7 +162,7 @@ ingredientsForm.addEventListener("submit", function (event) {
   event.preventDefault();
   ingredientsForm.reset();
   dropDownBase.focus();
-
+  volumeCalc();
   renderRecipe();
   nameGenerator();
   renderImage();
@@ -149,4 +172,6 @@ ingredientsForm.addEventListener("submit", function (event) {
   if (imageArray.length !== 0) {
     imageArray = [];
   }
+
 });
+
