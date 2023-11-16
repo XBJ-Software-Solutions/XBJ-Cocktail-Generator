@@ -122,7 +122,7 @@
     border: 2px solid #111;
     padding-bottom: 3px;
     border-radius: 5px;
-    background-color: #80b584;
+    background-color: rgb(211, 207, 207);
   }
 
   #btnInstructions:hover {
@@ -146,9 +146,19 @@
     position: relative;
     border: 2px solid #111;
     padding: 12px;
+    width: 670px;
     border-radius: 5px;
-    background-color: #80b584;
+    background-color: rgb(211, 207, 207);
     box-shadow: 2px 2px 10px #111;
+  }
+
+  #instrSection h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  #instrSection p {
+    font-size: 22px;
   }
 
   .instrHeading {
@@ -164,7 +174,7 @@
   .nextBtn,
   .prevBtn {
     border: none;
-    background-color: #80b584;
+    background-color: rgb(211, 207, 207);
     height: 16px;
     width: 51px;
     margin-bottom: 12px;
