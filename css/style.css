@@ -1,251 +1,295 @@
-/* *  border: 1px solid black;
-} { */
-
   body {
     background: beige;
     font-family: sans-serif;
     width: 100vw;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
-/* --------------------------------- Header Styles---------------------------------*/
 
-header {
-  margin-bottom: 32px;
-  background: rgb(241, 145, 89);
-}
+  /* --------------------------------- Header Styles---------------------------------*/
 
-h1 {
-  text-align: center;
-  font-size: 4vw;
-  font-weight: bold;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-  outline: 10px ridge rgb(0, 0, 0);
-  width: 100vw;
-  vertical-align: middle;
-}
+  header {
+    margin-bottom: 32px;
+    background: rgb(241, 145, 89);
+  }
 
-header div {
-  display: flex;
-  align-items: center;
-  width: 100vw;
-}
+  h1 {
+    text-align: center;
+    font-size: 4vw;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    outline: 10px ridge rgb(0, 0, 0);
+    width: 100vw;
+    vertical-align: middle;
+  }
 
-div img {
-  width: 12vw;
-  margin: 10px;
-  border: 3px solid #111;
-}
+  header div {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+  }
 
-/* --------------------------------- Nav Bar Styles---------------------------------*/
+  div img {
+    width: 12vw;
+    margin: 10px;
+    border: 3px solid #111;
+  }
 
-nav {
-  padding: 20px;
-  background: rgb(79, 84, 84);
-}
+  /* --------------------------------- Nav Bar Styles---------------------------------*/
 
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 90px;
-}
+  nav {
+    padding: 20px;
+    background: rgb(79, 84, 84);
+  }
 
-li > a {
-  color: rgb(211, 207, 207);
-  font-size: 1.5vw;
-}
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 90px;
+  }
 
-/* --------------------------------- Main Styles---------------------------------*/
+  li>a {
+    color: rgb(211, 207, 207);
+    font-size: 1.5vw;
+  }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 80%;
-  margin: 1em auto;
-  align-items: center;
-  gap: 20px;
-}
+  /* --------------------------------- Main Styles---------------------------------*/
 
-h2 {
-  font-size: 2vw;
-  font-weight: bold;
-  color: black;
-  border: 2px solid #111;
-  margin-bottom: 10px;
-  text-align: center;
-  border-radius: 10px;
-  padding: 10px 40px 10px 40px;
-  background: #80b584;
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 1em auto;
+    align-items: center;
+    gap: 20px;
+  }
 
-/* --------------------------------- Instructions Styles---------------------------------*/
-.step {
-  list-style-type: decimal;
-  margin-left: 1.5vw;
-  margin-right: 1.2vw;
-}
+  h2 {
+    font-size: 2vw;
+    font-weight: bold;
+    color: black;
+    border: 2px solid #111;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 40px 10px 40px;
+    background: #80b584;
+  }
 
-.listDescription {
-  list-style-type: disc;
-  margin-left: 1.2vw;
-} 
+  /* --------------------------------- Instructions Styles---------------------------------*/
+  .step {
+    list-style-type: decimal;
+    margin-left: 1.5vw;
+    margin-right: 1.2vw;
+  }
 
+  .listDescription {
+    list-style-type: disc;
+    margin-left: 1.2vw;
+  }
 
-.instructions {
-  border: 5px solid #111;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #07444a;
-  margin-bottom: 10px;
-  font-size: 1.5vw;
-  line-height: 2.5vw;
-  padding: 20px;
-  color: aliceblue;
-}
+  .instructions {
+    border: 5px solid #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #07444a;
+    margin-bottom: 10px;
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+    padding: 20px;
+    color: aliceblue;
+  }
 
-/* --------------------------------- Form Styles---------------------------------*/
+  #whatever {
+    display: flex;
+    flex-direction: column;
+  }
 
-
-
-form {
-  display: flex;
-  flex-direction: row;
-  padding: 15px;
-  border-radius: 20px;
-  border: 3px solid;
-  border-color: #111;
-  background: rgb(241, 145, 89);
-  gap: 5vw;
-/* position: relative; */
-}
-
-.dropDownSelector {
-  text-align: center;
-  display: flex;
-flex-direction: column;
-
-}
-
-
-
-label {
-  font-family: cursive;
-  text-align: center;
-  font-size: 2.2vw;
-  margin-right: 0.5vw;
+  #btnInstructions {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
     align-self: center;
-font-weight: 800;
-}
+    text-align: center;
+    justify-content: center;
+    border: 2px solid #111;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    background-color: #80b584;
+  }
+
+  #btnInstructions:hover {
+    box-shadow: 2px 2px 10px #111;
+  }
+
+  #makeDrink {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  #makeDrink button {
+    height: 32px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  #instrSection {
+    position: relative;
+    border: 2px solid #111;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #80b584;
+    box-shadow: 2px 2px 10px #111;
+  }
+
+  .instrHeading {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nextPrevBtn {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nextBtn,
+  .prevBtn {
+    border: none;
+    background-color: #80b584;
+    height: 16px;
+    width: 51px;
+    margin-bottom: 12px;
+  }
+
+  .exitBtn {
+    text-align: center;
+    font-size: 10px;
+    color: red;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+
+  /* --------------------------------- Form Styles---------------------------------*/
+
+  form {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    border-radius: 20px;
+    border: 3px solid;
+    border-color: #111;
+    background: rgb(241, 145, 89);
+    gap: 5vw;
+  }
+
+  .dropDownSelector {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-family: cursive;
+    text-align: center;
+    font-size: 2.2vw;
+    margin-right: 0.5vw;
+    align-self: center;
+    font-weight: 800;
+  }
+
+  /* --------------------------------- Submit Styles---------------------------------*/
+
+  input[type="submit"] {
+    color: white;
+    border: solid 2px #111;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #07444a;
+
+    font-size: 1.8vw;
+    transition: background-color 0.3s;
+    color: aliceblue;
+  }
+
+  /* --------------------------------- Dropdown List Styles---------------------------------*/
+
+  select {
+    font-size: 1.5vw;
+    color: aliceblue;
+    margin-top: 10px;
+    font-weight: bold;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    color: #fff;
+    padding: 4px;
+    border-radius: 9px;
+  }
+
+  select:hover option {
+    cursor: pointer;
+    display: block;
+  }
+
+  #dropDownBase {
+    background: #3c71a5;
+  }
+
+  #dropDownCitrus {
+    background: #de3c27;
+  }
+
+  #dropDownBitter {
+    background: #ce8c2b;
+  }
+
+  #dropDownSweet {
+    background: #74a041;
+  }
+
+  /* --------------------------------- Recipe Styles---------------------------------*/
+
+  #recipeRender {
+    display: flex;
+    align-items: center;
+  }
+
+  #recipeList {
+    font-size: 2vw;
+    list-style-type: disc;
+    line-height: 3vw;
+    padding: 4vw;
+  }
+
+  #recipeList p {
+    font-weight: 700;
+  }
+
+  #recipe li {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+
+  #recipeImage {
+    width: 40vw;
+  }
 
 
-/* --------------------------------- Submit Styles---------------------------------*/
+  /* --------------------------------- Footer Styles---------------------------------*/
 
-input[type="submit"] {
-  color: white;
-  border: solid 2px #111;
-  border-radius: 10px;
-  cursor: pointer;
-  background: #07444a;
-
-  font-size: 1.8vw;
-/* padding: 0.5vw; */
-transition: background-color 0.3s;
-color: aliceblue;
-}
-
-
-/* --------------------------------- Dropdown List Styles---------------------------------*/
-
-select {
-  font-size: 1.5vw;
-  color: aliceblue;
-  margin-top: 10px;
-   font-weight: bold; 
-   border: 2px solid black;
-   margin-bottom: 10px;
-   color: #fff;
-   padding: 4px;
-   border-radius: 9px;
- 
-}
-select:hover option {
-  cursor: pointer;
-  display: block;
-  
-} 
-
-#dropDownBase {
-  background: #3c71a5;
-}
-
-#dropDownCitrus {
-  background: #de3c27;
-
-}
-#dropDownBitter{
-  background: #ce8c2b;
-
-}
-#dropDownSweet{
-  background: #74a041;
-
-}
-
-
-/* --------------------------------- Recipe Styles---------------------------------*/
-
-
-#recipeRender {
-  display: flex;
-  /* border: 5px solid black; */
-align-items: center;
-}
-
-#recipeList {
-  /* border: 5px solid black; */
-font-size: 2vw;
-list-style-type: disc;
-line-height: 3vw;
-padding: 4vw;
-}
-#recipeList p {
-font-weight: 700;
-}
-
-#recipe li {
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-}
-#recipeImage {
-  width: 40vw;
-}
-
-
-
-/* <div id="cocktail" style="display: none;">
-
-         <h2 id="recipeHeading"></h2>
-<div id="recipeRender">
-
-        <img id="recipeImage" />
-      <section id="recipe">
-        <ul id="recipeList"></ul>
-        <!-- <p></p> -->
-     
-    </div>
-    </div> */
-
-/* --------------------------------- Footer Styles---------------------------------*/
-
-footer {
-  font-size: 1.5vw;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  background: rgb(241, 145, 89);
-
-}
+  footer {
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 20px;
+    background: rgb(241, 145, 89);
+    margin-top: auto;
+  }
