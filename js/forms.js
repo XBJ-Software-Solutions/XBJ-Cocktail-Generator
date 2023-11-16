@@ -21,7 +21,7 @@ function populateDropdown(dropdown, allIngredients) {
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
     ingredientOption.title = allIngredients[i].description || "";
-    
+
     dropdown.appendChild(ingredientOption);
   }
 }
@@ -41,10 +41,12 @@ function handleSelection(event) {
     if (userSelection === allIngredients[i].name) {
       let userIngredient = allIngredients[i];
       selectedIngredients.push(userIngredient);
+
     };
   };
   console.log(selectedIngredients);
 };
+
 
 // commented out lines is an attempt to limit base spirit selections to one
 // function handleBaseSelection(event) {
@@ -137,6 +139,7 @@ function renderRecipe() {
   }  
 
 function removeRecipe() {
+
   let recipeList = document.getElementById("recipeList");
   let recipeImage = document.getElementById("recipeImage");
   let recipeHeading = document.getElementById("recipeHeading");
@@ -148,6 +151,7 @@ function removeRecipe() {
   recipeHeading.textContent = "";
 
   cocktailSection.style.display = "none";
+
 }
 
 ingredientsForm.addEventListener("click", function () {
@@ -168,4 +172,6 @@ ingredientsForm.addEventListener("submit", function (event) {
   if (imageArray.length !== 0) {
     imageArray = [];
   }
+
 });
+
