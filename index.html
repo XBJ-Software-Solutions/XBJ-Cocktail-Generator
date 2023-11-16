@@ -1,123 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About XBJ</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <div>
-         <img src="img/logo.png" alt="logo" />
-              <h1>XBJ Cocktail Generator</h1>
-      </div>
-   
-      <nav>
 
-        <ul>
-          <li><a href="index.html">Home Page</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-          <li><a href="animation.html">Cheers</a></li>
-        </ul>
-      </nav>
-  
+<head>
+  <title>About XBJ</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    </header>
-    <main>
-      <section class="instructions">
-        <h2>Instructions</h2>
-        <ol>
-          <li class="step">
-            Select Your Base
-            <ul>
-              <li class="listDescription">Click on the first Dropdown menu labeled 'Base' and choose your preferred base</li>
-            </ul>
-          </li>
-          <li class="step">
-            Choose Your Citrus
-            <ul>
-              <li class="listDescription">On the second dropdown, select your desired citrus ingredient from the list</li>
-            </ul>
-          </li>
-          <li class="step">
-            Add Bitter element
-            <ul>
-              <li class="listDescription">Now for a bitter ingredient, pick your preferred bitter from the bitter dropdown</li>
-            </ul>
-          </li>
-          <li class="step">
-            Select a Sweet component
-            <ul>
-              <li class="listDescription">From the fourth dropdown select your sweet ingredient of choice!</li>
-            </ul>
-          </li>
-          <li class="step">
-            Hit Submit!
-          </li>
-        </ol>
-        <!-- <  <p>To craft your perfect concoction, follow these simple steps: Begin by navigating to the "Base" dropdown menu and select your preferred base ingredient. Move on to the "Citrus" dropdown, where you can choose a citrusy component to complement your drink. Head to the "Bitter" dropdown and pick a bitter element that suits your taste. Lastly, explore the "Sweet" dropdown and select the perfect sweet ingredient to balance the flavors. Once you've made your selections for each category, review your choices, and when satisfied, press the "Submit" button below the dropdown menus to submit your custom blend. Cheers to your unique creation!</p>> -->
-      </section>
-      
-      <section id="dropDowns">
-        <form id="ingredientsForm">
-
-
-          <div class="dropDownSelector">
-
-            <label for ="dropDownBase">Base</label>
-            <select id="dropDownBase" name="dropdown-1" required>
-            </select>
-          </div>
-
-          <div class="dropDownSelector">  
-
-
-            <label for ="dropDownCitrus">Citrus</label>
-            <select id="dropDownCitrus" name="dropdown-2">
-            </select>
-          </div>
-
-          <div class="dropDownSelector">
-
-            <label for ="dropDownBitter">Bitter</label>
-            <select id="dropDownBitter" name="dropdown-3">
-            </select>
-          </div>
-
-          <div class="dropDownSelector">
-
-            <label for ="dropDownSweet">Sweet</label>
-            <select id="dropDownSweet" name="dropdown-4">
-            </select>
-          </div>
-          <input type="submit" value ="Create!">
-
-        </form>
-      </section>
-
-   <h2 id="recipeHeading"></h2>
-<div id="recipeRender">
-
-
-    
-        <img id="recipeImage" />
-      <section id="recipe">
-        <ul id="recipeList"></ul>
-        <!-- <p></p> -->
-     
+<body>
+  <header>
+    <div>
+      <img src="img/logo.png" alt="logo" />
+      <h1>XBJ Cocktail Generator</h1>
     </div>
-      </section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="animation.html">Cheers</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="makeDrink">
+      <div id="whatever">
+        <h2>Make a drink!</h2>
+        <button id="btnInstructions">
+          <p>instructions</p>
+        </button>
 
-    </main>
-    
-    <footer>
-&copy; XBJ Software Solutions 
-    </footer>
+      </div>
+      <div id="instrSection">
+        <div id="instrPg1">
+          <div class="instrHeading">
+            <h3>Select Your Base</h3>
+            <button class="exitBtn">X</button>
+          </div>
+          <p>Click on the first Dropdown menu labeled 'Base' and choose your preferred base</p>
+          <div class="nextPrevBtn">
+            <button class="nextBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="instrPg2">
+          <div class="instrHeading">
+            <h3>Choose Your Citrus</h3>
+            <button class="exitBtn">X</button>
+          </div>
+          <p>On the second dropdown, select your desired citrus ingredient from the list</p>
+          <div class="nextPrevBtn">
+            <button class="prevBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+              </svg>
+            </button>
+            <button class="nextBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="instrPg3">
+          <div class="instrHeading">
+            <h3>Add Bitter element</h3>
+            <button class="exitBtn">X</button>
+          </div>
+          <p>Now for a bitter ingredient, pick your preferred bitter from the bitter dropdown</p>
+          <div class="nextPrevBtn">
+            <button class="prevBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+              </svg>
+            </button>
+            <button class="nextBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="instrPg4">
+          <div class="instrHeading">
+            <h3>Select a Sweet component</h3>
+            <button class="exitBtn">X</button>
+          </div>
+          <p>From the fourth dropdown select your sweet ingredient of choice!</p>
+          <div class="nextPrevBtn">
+            <button class="prevBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+              </svg>
+            </button>
+            <button class="nextBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="instrPg5">
+          <div class="instrHeading">
+            <h3>Hit Create!</h3>
+            <button class="exitBtn">X</button>
+          </div>
+          <p>Cheers to your unique creation!</p>
+          <div class="nextPrevBtn">
+            <button class="prevBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="dropDowns">
+      <form id="ingredientsForm">
+        <div class="dropDownSelector">
+          <label for="dropDownBase">Base</label>
+          <select id="dropDownBase" name="dropdown-1" required>
+          </select>
+        </div>
+        <div class="dropDownSelector">
+          <label for="dropDownCitrus">Citrus</label>
+          <select id="dropDownCitrus" name="dropdown-2">
+          </select>
+        </div>
+        <div class="dropDownSelector">
+          <label for="dropDownBitter">Bitter</label>
+          <select id="dropDownBitter" name="dropdown-3">
+          </select>
+        </div>
+        <div class="dropDownSelector">
+          <label for="dropDownSweet">Sweet</label>
+          <select id="dropDownSweet" name="dropdown-4" required>
+          </select>
+        </div>
+        <input type="submit" value="Create!">
+      </form>
+    </section>
+    <div id="cocktail" style="display: none;">
+      <h2 id="recipeHeading"></h2>
+      <div id="recipeRender">
+        <img id="recipeImage" />
+        <section id="recipe">
+          <ul id="recipeList"></ul>
+      </div>
+    </div>
+    </section>
+  </main>
+  <footer>
+    &copy; XBJ Software Solutions
+  </footer>
+  <script src="js/ingredients.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/hideInstructions.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/render.js"></script>
+</body>
 
-        <script src="js/ingredients.js"></script>
-    <script src="js/forms.js"></script>
-
-    <script src="js/app.js"></script>
-  </body>
-  </html>
+</html>

@@ -2,13 +2,12 @@
 
 let ingredientsForm = document.getElementById("ingredientsForm");
 let drinkImage = document.getElementById("recipeImage");
-
 let selectedIngredients = [];
-
-let base = document.getElementById("dropDownBase");
-let citrus = document.getElementById("dropDownCitrus");
-let bitter = document.getElementById("dropDownBitter");
-let sweet = document.getElementById("dropDownSweet");
+let baseSelector = document.getElementById("dropDownBase");
+let citrusSelector = document.getElementById("dropDownCitrus");
+let bitterSelector = document.getElementById("dropDownBitter");
+let sweetSelector = document.getElementById("dropDownSweet");
+let selectedBaseIngredient = [];
 
 function populateDropdown(dropdown, allIngredients) {
   dropdown.innerHTML = "";
@@ -23,148 +22,60 @@ function populateDropdown(dropdown, allIngredients) {
     ingredientOption.title = allIngredients[i].description || "";
     dropdown.appendChild(ingredientOption);
   }
-}
-populateDropdown(base, baseSpirits);
-populateDropdown(citrus, citrusIngredients);
-populateDropdown(bitter, bitterIngredients);
-populateDropdown(sweet, sweetIngredients);
+};
 
-let baseSelector = document.getElementById("dropDownBase");
-let citrusSelector = document.getElementById("dropDownCitrus");
-let bitterSelector = document.getElementById("dropDownBitter");
-let sweetSelector = document.getElementById("dropDownSweet");
-
-
-// function handleSelection(event) {
-//   let userSelection = event.target.value;
-
-//   // Check if the ingredient is already in the selectedIngredients array
-//   let existingIngredientIndex = selectedIngredients.findIndex(
-//     (ingredient) => ingredient.name === userSelection
-//   );
-
-//   // If the ingredient is already selected, remove it; otherwise, add it
-//   if (existingIngredientIndex !== -1) {
-//     selectedIngredients.splice(existingIngredientIndex, 1);
-//   } else {
-//     for (let i = 0; i < allIngredients.length; i++) {
-//       if (userSelection === allIngredients[i].name) {
-//         let userIngredient = allIngredients[i];
-//         selectedIngredients.push(userIngredient);
-//       }
-//     }
-//   }
-
-//   removeRecipe();
-// }
-
-
+populateDropdown(baseSelector, baseSpirits);
+populateDropdown(citrusSelector, citrusIngredients);
+populateDropdown(bitterSelector, bitterIngredients);
+populateDropdown(sweetSelector, sweetIngredients);
 
 function handleSelection(event) {
   let userSelection = event.target.value;
-  //new
-  // selectedIngredients = [];
   for (let i = 0; i < allIngredients.length; i++) {
     if (userSelection === allIngredients[i].name) {
       let userIngredient = allIngredients[i];
       selectedIngredients.push(userIngredient);
-    }
-  }
-  removeRecipe();
-}
-
-// Render Image function
-let imageArray = [];
-function renderImage() {
-  let ImageMap = function (src, alt) {
-    this.src = src;
-    this.alt = alt;
-
-    imageArray.push(this);
+    };
   };
+  console.log(selectedIngredients);
+};
 
-  let tequilaImage = new ImageMap("img/tequila.jpg", "Tequila");
-  let rumImage = new ImageMap("img/rum.jpg", "Rum");
-  let whiskeyImage = new ImageMap("img/whiskey.jpg", "Whiskey");
-  let ginImage = new ImageMap("img/gin.jpg", "Gin");
+function handleBaseSelection(event) {
+  console.log(selectedBaseIngredient);
+  let userSelection = event.target.value;
+  if (selectedBaseIngredient.length == 0)
+    for (let i = 0; i < baseSpirits.length; i++) {
+      if (userSelection === baseSpirits[i].name) {
+        let userIngredient = baseSpirits[i];
+        selectedBaseIngredient.push(userIngredient);
+        selectedIngredients.push(userIngredient);
+      };
+    } else {
+    alert('Apologies, but you may only select one base spirit. This cocktail will use the first base Spirit you chose.');
+    selectedIngredients.splice();
+    // dropDownBase.reset();
+    event.target.value = selectedBaseIngredient[0].name;
+  };
+  console.log(selectedIngredients);
+};
 
-  for (let i = 0; i < imageArray.length; i++) {
-    if (selectedIngredients[0].name === imageArray[i].alt) {
-      drinkImage.src = imageArray[i].src;
-      drinkImage.alt = imageArray[i].alt;
-    }
-  }
-}
-
-baseSelector.addEventListener("change", handleSelection);
+baseSelector.addEventListener("change", handleBaseSelection);
 citrusSelector.addEventListener("change", handleSelection);
 bitterSelector.addEventListener("change", handleSelection);
 sweetSelector.addEventListener("change", handleSelection);
 
-// function renderRecipe() {
-//   let recipeDisplay = document.getElementById("recipe");
-//   let recipeText = "Here you go! Mix ";
-  
-//   for (let i = 0; i < selectedIngredients.length; i++) {
-//     recipeText += `${selectedIngredients[i].volume} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
-
-//     if (i < selectedIngredients.length - 1) {
-//       recipeText += ", ";
-//     } else {
-//       recipeText += ". Stir over ice and pour into a chilled cocktail glass. Enjoy!";
-//     }
-//   }
-
-//   recipeDisplay.textContent = recipeText;
-// }
-
-
-
-
-function renderRecipe() {
-  let recipeDisplay = document.getElementById("recipe");
-  let list = document.getElementById("recipeList");
-
-  let recipeGreet = document.createElement("p");
-  recipeGreet.textContent = "Here you go! Mix: ";
-  list.appendChild(recipeGreet);
-
-  for (let i=0; i <selectedIngredients.length; i++ ){
-    let li = document.createElement("li");
-    li.textContent= `${selectedIngredients[i].volume} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
-    list.appendChild(li);
-  }
-  let recipeEnjoy = document.createElement("p");
-  recipeEnjoy.textContent = "Stir over ice and pour into a chilled cocktail glass. Enjoy! ";
-  list.appendChild(recipeEnjoy);
-
-  // recipeDisplay.textContent = `Here you go! Mix ${selectedIngredients[0].volume} ${selectedIngredients[0].unitOfMeasure} of ${selectedIngredients[0].name}, ${selectedIngredients[1].volume} ${selectedIngredients[1].unitOfMeasure} of ${selectedIngredients[1].name}, ${selectedIngredients[2].volume} ${selectedIngredients[2].unitOfMeasure} of ${selectedIngredients[2].name}, and ${selectedIngredients[3].volume} ${selectedIngredients[3].unitOfMeasure} of ${selectedIngredients[3].name}. Stir over ice and pour into a chilled cocktail glass. Enjoy!`;
-}
-
 function removeRecipe() {
-  let recipeDisplay = document.getElementById("recipe");
-  if (recipeDisplay.textContent.trim() !== "") {
-    recipeDisplay.textContent = "";
-  }
-  if (drinkImage.src.trim() !== "") {
-    drinkImage.src = "";
-    drinkImage.alt = "";
-  }
-  if (recipeHeading.textContent.trim() !== "") {
-    recipeHeading.textContent = "";
-  }
+  let recipeList = document.getElementById("recipeList");
+  let recipeImage = document.getElementById("recipeImage");
+  let recipeHeading = document.getElementById("recipeHeading");
+  let cocktailSection = document.getElementById("cocktail");
+  recipeList.innerHTML = "";
+  recipeImage.src = "";
+  recipeImage.alt = "";
+  recipeHeading.textContent = "";
+  cocktailSection.style.display = "none";
 }
 
-ingredientsForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  ingredientsForm.reset();
-  dropDownBase.focus();
-
-  renderRecipe();
-  nameGenerator();
-  renderImage();
-  selectedIngredients = [];
-  if (imageArray.length !== 0) {
-    imageArray = [];
-  }
+ingredientsForm.addEventListener("click", function () {
+  removeRecipe();
 });
