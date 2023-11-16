@@ -36,7 +36,6 @@ let citrusSelector = document.getElementById("dropDownCitrus");
 let bitterSelector = document.getElementById("dropDownBitter");
 let sweetSelector = document.getElementById("dropDownSweet");
 
-// commented out lines are starting to attempt to limit base spirit selections to one
 function handleSelection(event) {
   let userSelection = event.target.value;
   for (let i = 0; i < allIngredients.length; i++) {
@@ -48,6 +47,7 @@ function handleSelection(event) {
   console.log(selectedIngredients);
 };
 
+// commented out lines is an attempt to limit base spirit selections to one
 // function handleBaseSelection(event) {
 //   let userSelection = event.target.value;
 //   let selectedBaseTwice = selectedIngredients.find(ingredient => ingredient.type === 'base');
@@ -101,34 +101,40 @@ bitterSelector.addEventListener("change", handleSelection);
 sweetSelector.addEventListener("change", handleSelection);
 
 let totalVol = 4.0
+let ratioVol = 1.0
 function volumeCalc() {
+  let selectedVol = 0
   for (let i=0; i < selectedIngredients.length; i++) {
-    
-  }
+    selectedVol += selectedIngredients[i].volume;
+  };
+  console.log (selectedVol);
+  ratioVol = totalVol / selectedVol;
+  console.log (ratioVol);
 }
+
 function renderRecipe() {
-  // let recipeDisplay = document.getElementById("recipe");
   let list = document.getElementById("recipeList");
   let recipeGreet = document.createElement("p");
   recipeGreet.textContent = "Here you go! Mix: ";
   list.appendChild(recipeGreet);
-
+  // let typeRatio = 1;
+  // if 
+  
   for (let i=0; i <selectedIngredients.length; i++ ){
     let li = document.createElement("li");
-    li.textContent= `${selectedIngredients[i].volume} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
+    li.textContent= `${selectedIngredients[i].volume * ratioVol} ${selectedIngredients[i].unitOfMeasure} of ${selectedIngredients[i].name}`;
     list.appendChild(li);
   }
-  let recipeEnjoy = document.createElement("p");
-
-  if (selectedIngredients.some(ingredient => ingredient.type === 'citrus')) {
+  let recipeEnjoy = document.createElement("p");  
+    if (selectedIngredients.some(ingredient => ingredient.type === 'citrus')) {
     recipeEnjoy.textContent = 'Shake over ice and pour through hawthorne strainer into a chilled cocktail glass. Enjoy!';
     list.appendChild(recipeEnjoy);
-  } else {
+    } else {
     recipeEnjoy.textContent = 'Stir over ice and pour into a chilled cocktail glass. Enjoy!';
     list.appendChild(recipeEnjoy);
-  }
+    }
   document.getElementById("cocktail").style.display = "block";
-}  
+  }  
 
 function removeRecipe() {
   let recipeList = document.getElementById("recipeList");
@@ -150,7 +156,7 @@ ingredientsForm.addEventListener("submit", function (event) {
   event.preventDefault();
   ingredientsForm.reset();
   dropDownBase.focus();
-
+  volumeCalc();
   renderRecipe();
   nameGenerator();
   renderImage();
