@@ -120,7 +120,7 @@ form {
   border-color: #111;
   background: rgb(241, 145, 89);
   gap: 5vw;
-
+/* position: relative; */
 }
 
 .dropDownSelector {
@@ -155,7 +155,6 @@ input[type="submit"] {
 /* padding: 0.5vw; */
 transition: background-color 0.3s;
 color: aliceblue;
-padding-top: ;
 }
 
 
@@ -165,6 +164,13 @@ select {
   font-size: 1.5vw;
   color: aliceblue;
   margin-top: 10px;
+   font-weight: bold; 
+   border: 2px solid black;
+   margin-bottom: 10px;
+   color: #fff;
+   padding: 4px;
+   border-radius: 9px;
+ 
 }
 select:hover option {
   cursor: pointer;
@@ -174,8 +180,8 @@ select:hover option {
 
 #dropDownBase {
   background: #3c71a5;
-
 }
+
 #dropDownCitrus {
   background: #de3c27;
 
@@ -188,6 +194,8 @@ select:hover option {
   background: #74a041;
 
 }
+
+
 /* --------------------------------- Recipe Styles---------------------------------*/
 
 
