@@ -21,7 +21,6 @@ function populateDropdown(dropdown, allIngredients) {
     let ingredientOption = document.createElement("option");
     ingredientOption.textContent = ingredientName;
     ingredientOption.title = allIngredients[i].description || "";
-    ingredientOption.classList.add("tooltip");
     
     dropdown.appendChild(ingredientOption);
   }
@@ -85,13 +84,14 @@ function renderImage() {
   let rumImage = new ImageMap("img/rum.jpg", "Rum");
   let whiskeyImage = new ImageMap("img/whiskey.jpg", "Whiskey");
   let ginImage = new ImageMap("img/gin.jpg", "Gin");
-  
+
     if (selectedIngredients.some(ingredient => ingredient.type === 'base')) {
       console.log(selectedIngredients);
       drinkImage.src  = (`img/${baseIndex.name.toLowerCase()}.jpg`);
       console.log(drinkImage.src);
       drinkImage.alt  = `${baseIndex.name}`;
     }
+
 }
   
 
@@ -135,10 +135,12 @@ function removeRecipe() {
   let recipeImage = document.getElementById("recipeImage");
   let recipeHeading = document.getElementById("recipeHeading");
   let cocktailSection = document.getElementById("cocktail");
+
   recipeList.innerHTML = "";
   recipeImage.src = "";
   recipeImage.alt = "";
   recipeHeading.textContent = "";
+
   cocktailSection.style.display = "none";
 }
 
