@@ -5,7 +5,9 @@
     background: beige;
     font-family: sans-serif;
     width: 100vw;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
   }
 /* --------------------------------- Header Styles---------------------------------*/
 
@@ -67,6 +69,7 @@ main {
   margin: 1em auto;
   align-items: center;
   gap: 20px;
+  flex:1;
 }
 
 h2 {
@@ -318,7 +321,7 @@ footer {
   font-size: 1.5vw;
   text-align: center;
   padding: 20px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   background: rgb(241, 145, 89);
-
+margin-top: auto;
 }
