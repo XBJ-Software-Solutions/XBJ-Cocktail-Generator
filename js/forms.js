@@ -48,22 +48,23 @@ function handleSelection(event) {
   console.log(selectedIngredients);
 };
 
-//   function handleBaseSelection(event) {
-//     let userSelection = event.target.value;
-//     let selectedBase = selectedIngredients.find(ingredient => ingredient.type === 'base');
-  
-//     Check if a base has already been selected
-//     if (selectedBase) {
-//       alert('You may only select one base spirit. Your selection has been changed.');
-//       event.target.value = '';
-//     } else {
-//     for (let i = 0; i < allIngredients.length; i++) {
-//       if (userSelection === allIngredients[i].name) {
-//         let userIngredient = allIngredients[i];
-//         if (selectedIngredients.some(ingredient => ingredient.type !== 'base'))
-//         selectedIngredients.push(userIngredient);
-//       }
+// function handleBaseSelection(event) {
+//   let userSelection = event.target.value;
+//   let selectedBaseTwice = selectedIngredients.find(ingredient => ingredient.type === 'base');
+
+//   // Check if a base has already been selected
+//   if (selectedBaseTwice) {
+//     alert('You may only select one base spirit. Please reselect the base spirit you would like to use.');
+//     event.target.value = '';
+//     // dropDownBase.reset();
+//   } else {
+//   for (let i = 0; i < allIngredients.length; i++) {
+//     if (userSelection === allIngredients[i].name) {
+//       let userIngredient = allIngredients[i];
+//       if (selectedIngredients.some(ingredient => ingredient.type !== 'base'))
+//       selectedIngredients.push(userIngredient);
 //     }
+//   }
 //   console.log(selectedIngredients);
 //   removeRecipe();
 //   }
@@ -87,7 +88,8 @@ function renderImage() {
   
     if (selectedIngredients.some(ingredient => ingredient.type === 'base')) {
       console.log(selectedIngredients);
-      drinkImage.src  = (`img/${baseIndex.name}.jpg`);
+      drinkImage.src  = (`img/${baseIndex.name.toLowerCase()}.jpg`);
+      console.log(drinkImage.src);
       drinkImage.alt  = `${baseIndex.name}`;
     }
 }
