@@ -7,6 +7,7 @@ let baseSelector = document.getElementById("dropDownBase");
 let citrusSelector = document.getElementById("dropDownCitrus");
 let bitterSelector = document.getElementById("dropDownBitter");
 let sweetSelector = document.getElementById("dropDownSweet");
+let selectedBaseIngredient = [];
 
 function populateDropdown(dropdown, allIngredients) {
   dropdown.innerHTML = "";
@@ -39,30 +40,26 @@ function handleSelection(event) {
   console.log(selectedIngredients);
 };
 
+function handleBaseSelection(event) {
+  console.log(selectedBaseIngredient);
+  let userSelection = event.target.value;
+  if (selectedBaseIngredient.length == 0)
+    for (let i = 0; i < baseSpirits.length; i++) {
+      if (userSelection === baseSpirits[i].name) {
+        let userIngredient = baseSpirits[i];
+        selectedBaseIngredient.push(userIngredient);
+        selectedIngredients.push(userIngredient);
+      };
+    } else {
+    alert('Apologies, but you may only select one base spirit. This cocktail will use the first base Spirit you chose.');
+    selectedIngredients.splice();
+    // dropDownBase.reset();
+    event.target.value = selectedBaseIngredient[0].name;
+  };
+  console.log(selectedIngredients);
+};
 
-// commented out lines is an attempt to limit base spirit selections to one
-// function handleBaseSelection(event) {
-//   let userSelection = event.target.value;
-//   let selectedBaseTwice = selectedIngredients.find(ingredient => ingredient.type === 'base');
-
-//   // Check if a base has already been selected
-//   if (selectedBaseTwice) {
-//     alert('You may only select one base spirit. Please reselect the base spirit you would like to use.');
-//     event.target.value = '';
-//     // dropDownBase.reset();
-//   } else {
-//   for (let i = 0; i < allIngredients.length; i++) {
-//     if (userSelection === allIngredients[i].name) {
-//       let userIngredient = allIngredients[i];
-//       if (selectedIngredients.some(ingredient => ingredient.type !== 'base'))
-//       selectedIngredients.push(userIngredient);
-//     }
-//   }
-//   console.log(selectedIngredients);
-//   removeRecipe();
-//   }
-// }
-baseSelector.addEventListener("change", handleSelection);
+baseSelector.addEventListener("change", handleBaseSelection);
 citrusSelector.addEventListener("change", handleSelection);
 bitterSelector.addEventListener("change", handleSelection);
 sweetSelector.addEventListener("change", handleSelection);
