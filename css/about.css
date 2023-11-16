@@ -1,6 +1,3 @@
-/* *  border: 1px solid black;
-} { */
-
   body {
     font-family: sans-serif;
     background: beige;
@@ -58,6 +55,7 @@
   }
   
   /* --------------------------------- Main Styles---------------------------------*/
+  
   main {
     display: flex;
     flex-direction: column;
