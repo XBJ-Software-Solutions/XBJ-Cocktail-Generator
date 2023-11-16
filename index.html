@@ -174,7 +174,7 @@
           <div class="dropDownSelector">
 
             <label for ="dropDownSweet">Sweet</label>
-            <select id="dropDownSweet" name="dropdown-4">
+            <select id="dropDownSweet" name="dropdown-4" required>
             </select>
           </div>
           <input type="submit" value ="Create!">
@@ -182,17 +182,17 @@
         </form>
       </section>
 
-   <h2 id="recipeHeading"></h2>
-<div id="recipeRender">
 
-
-    
-        <img id="recipeImage" />
+      <div id="cocktail" style="display: none;">
+        <h2 id="recipeHeading"></h2>
+      <div id="recipeRender">
+       <img id="recipeImage" />
       <section id="recipe">
-        <ul id="recipeList"></ul>
-        <!-- <p></p> -->
-     
-    </div>
+       <ul id="recipeList"></ul>
+       <!-- <p></p> -->
+   </div>
+   </div>
+
       </section>
 
     </main>
@@ -200,10 +200,11 @@
     <footer>
 &copy; XBJ Software Solutions 
     </footer>
-
-        <script src="js/ingredients.js"></script>
+    
+    <script src="js/ingredients.js"></script>
     <script src="js/forms.js"></script>
     <script src="js/hideInstructions.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/render.js"></script>
   </body>
   </html>

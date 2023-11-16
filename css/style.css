@@ -193,7 +193,7 @@ form {
   border-color: #111;
   background: rgb(241, 145, 89);
   gap: 5vw;
-
+/* position: relative; */
 }
 
 .dropDownSelector {
@@ -228,20 +228,22 @@ input[type="submit"] {
 /* padding: 0.5vw; */
 transition: background-color 0.3s;
 color: aliceblue;
-padding-top: ;
 }
 
 
 /* --------------------------------- Dropdown List Styles---------------------------------*/
 
-
-
-
-
 select {
   font-size: 1.5vw;
   color: aliceblue;
   margin-top: 10px;
+   font-weight: bold; 
+   border: 2px solid black;
+   margin-bottom: 10px;
+   color: #fff;
+   padding: 4px;
+   border-radius: 9px;
+ 
 }
 select:hover option {
   cursor: pointer;
@@ -249,11 +251,10 @@ select:hover option {
   
 } 
 
-
 #dropDownBase {
   background: #3c71a5;
-
 }
+
 #dropDownCitrus {
   background: #de3c27;
 
@@ -266,28 +267,49 @@ select:hover option {
   background: #74a041;
 
 }
+
+
 /* --------------------------------- Recipe Styles---------------------------------*/
+
 
 #recipeRender {
   display: flex;
-  border: 5px solid black;
+  /* border: 5px solid black; */
+align-items: center;
 }
 
 #recipeList {
-  border: 5px solid black;
+  /* border: 5px solid black; */
+font-size: 2vw;
+list-style-type: disc;
+line-height: 3vw;
+padding: 4vw;
+}
+#recipeList p {
+font-weight: 700;
+}
 
+#recipe li {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+#recipeImage {
+  width: 40vw;
 }
 
 
-/* <div id="recipeRender">
-   <h2 id="recipeHeading"></h2>
 
-     <div>
+/* <div id="cocktail" style="display: none;">
+
+         <h2 id="recipeHeading"></h2>
+<div id="recipeRender">
+
         <img id="recipeImage" />
       <section id="recipe">
         <ul id="recipeList"></ul>
         <!-- <p></p> -->
-     </div>
+     
+    </div>
     </div> */
 
 /* --------------------------------- Footer Styles---------------------------------*/
